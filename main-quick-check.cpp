@@ -57,12 +57,12 @@ static void testBigUnsignedU8ArrayConstructor (void) {
     if (big.u8Count () == 0) {
       u8AccessString.append ("0") ;
     }else{
-      char s [4] ;
-      snprintf (s, 3, "%" PRIX8, big.u8AtIndex (big.u8Count () - 1)) ;
+      char str [4] ;
+      snprintf (str, 3, "%" PRIX8, big.u8AtIndex (big.u8Count () - 1)) ;
       u8AccessString.append (s) ;
       for (size_t i = big.u8Count () - 1 ; i > 0 ; i--) {
         const uint8_t v = big.u8AtIndex (i - 1) ;
-        snprintf (s, 3, "%02" PRIX8, v) ;
+        snprintf (str, 3, "%02" PRIX8, v) ;
         u8AccessString.append (s) ;
       }
     }
@@ -269,23 +269,8 @@ static void testBigUnsignedRightAndLeftShifts (void) {
 
 static void test_MultiplyingDividing_BigUnsigned (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigUnsigned: test multiplying, dividing... " ;
-//  const BigUnsigned dividend (2, 2, (uint8_t[2]) {0x57, 0x4E} COMMA_HERE) ;
-//  const BigUnsigned divisor (2, 2, (uint8_t[2]) {0x51, 0xD3} COMMA_HERE) ;
-//  const BigUnsignedQuotientRemainder r = dividend.divideByBigUnsigned (divisor) ;
-//  BigUnsigned verif = divisor ;
-//  verif *= r.quotient () ;
-//  verif.printHex     ("Q * div  ") ;
-//  verif += r.remainder () ;
-//  verif.printHex     ("Verif    ") ;
-//  dividend.printHex  ("Dividend ") ;
-//  divisor.printHex   ("Divisor  ") ;
-//  r.quotient ().printHex   ("Quotient ") ;
-//  r.remainder ().printHex   ("Remainder") ;
-//  exit (1) ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
-//    std::cout << "----\n" ;
     const BigUnsigned dividend = BigUnsigned::randomNumber () ;
     BigUnsigned divisor ;
     while (divisor.isZero ()) {
