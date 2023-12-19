@@ -89,27 +89,3 @@ int64_t BigSigned::int64 (void) const {
 }
 
 //--------------------------------------------------------------------------------------------------
-
-uint32_t BigSigned::requiredBitCountForSignedRepresentation (void) const {
-  return mUnsigned.requiredBitCountForUnsignedRepresentation () ;
-}
-
-//--------------------------------------------------------------------------------------------------
-
-uint32_t BigSigned::requiredBitCountForUnsignedRepresentation (void) const {
-  return mUnsigned.requiredBitCountForUnsignedRepresentation () ;
-}
-
-//--------------------------------------------------------------------------------------------------
-
-void BigSigned::extractBytesForUnsignedRepresentation (std::vector <uint8_t> & outValue) const {
-  mUnsigned.extractBytesForUnsignedRepresentation (outValue) ;
-}
-
-//--------------------------------------------------------------------------------------------------
-
-void BigSigned::extractBytesForSignedRepresentation (std::vector <uint8_t> & outValue) const {
-  mUnsigned.extractBytesForUnsignedRepresentation (outValue) ;
-}
-
-//--------------------------------------------------------------------------------------------------

@@ -133,16 +133,12 @@ class BigSigned final {
   public: uint64_t uint64 (void) const ;
   public:  int32_t int32  (void) const ;
   public:  int64_t int64  (void) const ;
-  public: void extractBytesForUnsignedRepresentation (std::vector <uint8_t> & outValue) const ;
-  public: void extractBytesForSignedRepresentation (std::vector <uint8_t> & outValue) const ;
 
 //--- Testing value
   public: bool fitsInUInt32 (void) const ;
   public: bool fitsInUInt64 (void) const ;
   public: bool fitsInSInt32 (void) const ;
   public: bool fitsInSInt64 (void) const ;
-  public: uint32_t requiredBitCountForSignedRepresentation (void) const ;
-  public: uint32_t requiredBitCountForUnsignedRepresentation (void) const ;
 
 //--- Private properties
   private: bool mIsPositive ;

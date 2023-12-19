@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF598B452B32043A0005B4C2 /* main-exhaustive-check.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B442B32043A0005B4C2 /* main-exhaustive-check.cpp */; };
+		CF598B6F2B32044A0005B4C2 /* BigUnsigned-add.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B462B32044A0005B4C2 /* BigUnsigned-add.cpp */; };
+		CF598B702B32044A0005B4C2 /* BigSigned-chunk-operations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B492B32044A0005B4C2 /* BigSigned-chunk-operations.cpp */; };
+		CF598B712B32044A0005B4C2 /* BigSigned-constructors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B4B2B32044A0005B4C2 /* BigSigned-constructors.cpp */; };
+		CF598B722B32044A0005B4C2 /* BigSigned-divide.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B4C2B32044A0005B4C2 /* BigSigned-divide.cpp */; };
+		CF598B732B32044A0005B4C2 /* BigUnsigned-divide.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B4D2B32044A0005B4C2 /* BigUnsigned-divide.cpp */; };
+		CF598B742B32044A0005B4C2 /* BigUnsigned-bit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B4F2B32044A0005B4C2 /* BigUnsigned-bit.cpp */; };
+		CF598B752B32044A0005B4C2 /* BigUnsigned-utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B512B32044A0005B4C2 /* BigUnsigned-utilities.cpp */; };
+		CF598B762B32044A0005B4C2 /* BigUnsigned-logic-operations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B522B32044A0005B4C2 /* BigUnsigned-logic-operations.cpp */; };
+		CF598B772B32044A0005B4C2 /* BigUnsigned-shifts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B532B32044A0005B4C2 /* BigUnsigned-shifts.cpp */; };
+		CF598B782B32044A0005B4C2 /* MF_Assert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B542B32044A0005B4C2 /* MF_Assert.cpp */; };
+		CF598B792B32044A0005B4C2 /* BigSigned-utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B562B32044A0005B4C2 /* BigSigned-utilities.cpp */; };
+		CF598B7A2B32044A0005B4C2 /* BigUnsigned-constructors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B572B32044A0005B4C2 /* BigUnsigned-constructors.cpp */; };
+		CF598B7B2B32044A0005B4C2 /* BigUnsigned-chunk-operations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B582B32044A0005B4C2 /* BigUnsigned-chunk-operations.cpp */; };
+		CF598B7C2B32044A0005B4C2 /* BigSigned-logic-operations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B592B32044A0005B4C2 /* BigSigned-logic-operations.cpp */; };
+		CF598B7D2B32044A0005B4C2 /* BigUnsigned-print.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B5A2B32044A0005B4C2 /* BigUnsigned-print.cpp */; };
+		CF598B7E2B32044A0005B4C2 /* BigSigned-shifts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B5B2B32044A0005B4C2 /* BigSigned-shifts.cpp */; };
+		CF598B7F2B32044A0005B4C2 /* BigSigned.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B5C2B32044A0005B4C2 /* BigSigned.cpp */; };
+		CF598B802B32044A0005B4C2 /* BigSigned-print.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B5D2B32044A0005B4C2 /* BigSigned-print.cpp */; };
+		CF598B812B32044A0005B4C2 /* BigUnsigned-subtract.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B5E2B32044A0005B4C2 /* BigUnsigned-subtract.cpp */; };
+		CF598B822B32044A0005B4C2 /* BigSigned-add.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B602B32044A0005B4C2 /* BigSigned-add.cpp */; };
+		CF598B832B32044A0005B4C2 /* BigUnsigned-divide-naive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B622B32044A0005B4C2 /* BigUnsigned-divide-naive.cpp */; };
+		CF598B842B32044A0005B4C2 /* BigUnsigned-conversions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B632B32044A0005B4C2 /* BigUnsigned-conversions.cpp */; };
+		CF598B852B32044A0005B4C2 /* BigSigned-subtract.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B642B32044A0005B4C2 /* BigSigned-subtract.cpp */; };
+		CF598B862B32044A0005B4C2 /* BigUnsigned-multiply.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B682B32044A0005B4C2 /* BigUnsigned-multiply.cpp */; };
+		CF598B872B32044A0005B4C2 /* galgas-random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B692B32044A0005B4C2 /* galgas-random.cpp */; };
+		CF598B882B32044A0005B4C2 /* BigSigned-multiply.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B6A2B32044A0005B4C2 /* BigSigned-multiply.cpp */; };
+		CF598B892B32044A0005B4C2 /* BigSigned-conversions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B6B2B32044A0005B4C2 /* BigSigned-conversions.cpp */; };
+		CF598B8A2B32044A0005B4C2 /* BigSigned-bit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B6C2B32044A0005B4C2 /* BigSigned-bit.cpp */; };
+		CF598B8B2B32044A0005B4C2 /* ChunkSharedArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B6E2B32044A0005B4C2 /* ChunkSharedArray.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CF598B382B3204260005B4C2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CF598B3A2B3204260005B4C2 /* xcode-exhaustive-check */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "xcode-exhaustive-check"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF598B442B32043A0005B4C2 /* main-exhaustive-check.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "main-exhaustive-check.cpp"; path = "../../main-exhaustive-check.cpp"; sourceTree = "<group>"; };
+		CF598B462B32044A0005B4C2 /* BigUnsigned-add.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-add.cpp"; path = "../../sources/BigUnsigned-add.cpp"; sourceTree = "<group>"; };
+		CF598B472B32044A0005B4C2 /* ChunkSharedArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChunkSharedArray.h; path = ../../sources/ChunkSharedArray.h; sourceTree = "<group>"; };
+		CF598B482B32044A0005B4C2 /* M_machine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = M_machine.h; path = ../../sources/M_machine.h; sourceTree = "<group>"; };
+		CF598B492B32044A0005B4C2 /* BigSigned-chunk-operations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-chunk-operations.cpp"; path = "../../sources/BigSigned-chunk-operations.cpp"; sourceTree = "<group>"; };
+		CF598B4A2B32044A0005B4C2 /* M_SourceLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = M_SourceLocation.h; path = ../../sources/M_SourceLocation.h; sourceTree = "<group>"; };
+		CF598B4B2B32044A0005B4C2 /* BigSigned-constructors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-constructors.cpp"; path = "../../sources/BigSigned-constructors.cpp"; sourceTree = "<group>"; };
+		CF598B4C2B32044A0005B4C2 /* BigSigned-divide.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-divide.cpp"; path = "../../sources/BigSigned-divide.cpp"; sourceTree = "<group>"; };
+		CF598B4D2B32044A0005B4C2 /* BigUnsigned-divide.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-divide.cpp"; path = "../../sources/BigUnsigned-divide.cpp"; sourceTree = "<group>"; };
+		CF598B4E2B32044A0005B4C2 /* chunk-U8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "chunk-U8.h"; path = "../../sources/chunk-U8.h"; sourceTree = "<group>"; };
+		CF598B4F2B32044A0005B4C2 /* BigUnsigned-bit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-bit.cpp"; path = "../../sources/BigUnsigned-bit.cpp"; sourceTree = "<group>"; };
+		CF598B502B32044A0005B4C2 /* MF_Assert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MF_Assert.h; path = ../../sources/MF_Assert.h; sourceTree = "<group>"; };
+		CF598B512B32044A0005B4C2 /* BigUnsigned-utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-utilities.cpp"; path = "../../sources/BigUnsigned-utilities.cpp"; sourceTree = "<group>"; };
+		CF598B522B32044A0005B4C2 /* BigUnsigned-logic-operations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-logic-operations.cpp"; path = "../../sources/BigUnsigned-logic-operations.cpp"; sourceTree = "<group>"; };
+		CF598B532B32044A0005B4C2 /* BigUnsigned-shifts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-shifts.cpp"; path = "../../sources/BigUnsigned-shifts.cpp"; sourceTree = "<group>"; };
+		CF598B542B32044A0005B4C2 /* MF_Assert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MF_Assert.cpp; path = ../../sources/MF_Assert.cpp; sourceTree = "<group>"; };
+		CF598B552B32044A0005B4C2 /* BigUnsigned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BigUnsigned.h; path = ../../sources/BigUnsigned.h; sourceTree = "<group>"; };
+		CF598B562B32044A0005B4C2 /* BigSigned-utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-utilities.cpp"; path = "../../sources/BigSigned-utilities.cpp"; sourceTree = "<group>"; };
+		CF598B572B32044A0005B4C2 /* BigUnsigned-constructors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-constructors.cpp"; path = "../../sources/BigUnsigned-constructors.cpp"; sourceTree = "<group>"; };
+		CF598B582B32044A0005B4C2 /* BigUnsigned-chunk-operations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-chunk-operations.cpp"; path = "../../sources/BigUnsigned-chunk-operations.cpp"; sourceTree = "<group>"; };
+		CF598B592B32044A0005B4C2 /* BigSigned-logic-operations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-logic-operations.cpp"; path = "../../sources/BigSigned-logic-operations.cpp"; sourceTree = "<group>"; };
+		CF598B5A2B32044A0005B4C2 /* BigUnsigned-print.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-print.cpp"; path = "../../sources/BigUnsigned-print.cpp"; sourceTree = "<group>"; };
+		CF598B5B2B32044A0005B4C2 /* BigSigned-shifts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-shifts.cpp"; path = "../../sources/BigSigned-shifts.cpp"; sourceTree = "<group>"; };
+		CF598B5C2B32044A0005B4C2 /* BigSigned.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BigSigned.cpp; path = ../../sources/BigSigned.cpp; sourceTree = "<group>"; };
+		CF598B5D2B32044A0005B4C2 /* BigSigned-print.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-print.cpp"; path = "../../sources/BigSigned-print.cpp"; sourceTree = "<group>"; };
+		CF598B5E2B32044A0005B4C2 /* BigUnsigned-subtract.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-subtract.cpp"; path = "../../sources/BigUnsigned-subtract.cpp"; sourceTree = "<group>"; };
+		CF598B5F2B32044A0005B4C2 /* chunk-U16.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "chunk-U16.h"; path = "../../sources/chunk-U16.h"; sourceTree = "<group>"; };
+		CF598B602B32044A0005B4C2 /* BigSigned-add.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-add.cpp"; path = "../../sources/BigSigned-add.cpp"; sourceTree = "<group>"; };
+		CF598B612B32044A0005B4C2 /* chunk-U64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "chunk-U64.h"; path = "../../sources/chunk-U64.h"; sourceTree = "<group>"; };
+		CF598B622B32044A0005B4C2 /* BigUnsigned-divide-naive.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-divide-naive.cpp"; path = "../../sources/BigUnsigned-divide-naive.cpp"; sourceTree = "<group>"; };
+		CF598B632B32044A0005B4C2 /* BigUnsigned-conversions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-conversions.cpp"; path = "../../sources/BigUnsigned-conversions.cpp"; sourceTree = "<group>"; };
+		CF598B642B32044A0005B4C2 /* BigSigned-subtract.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-subtract.cpp"; path = "../../sources/BigSigned-subtract.cpp"; sourceTree = "<group>"; };
+		CF598B652B32044A0005B4C2 /* ChunkSelectSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChunkSelectSize.h; path = ../../sources/ChunkSelectSize.h; sourceTree = "<group>"; };
+		CF598B662B32044A0005B4C2 /* galgas-random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "galgas-random.h"; path = "../../sources/galgas-random.h"; sourceTree = "<group>"; };
+		CF598B672B32044A0005B4C2 /* BigSigned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BigSigned.h; path = ../../sources/BigSigned.h; sourceTree = "<group>"; };
+		CF598B682B32044A0005B4C2 /* BigUnsigned-multiply.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-multiply.cpp"; path = "../../sources/BigUnsigned-multiply.cpp"; sourceTree = "<group>"; };
+		CF598B692B32044A0005B4C2 /* galgas-random.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "galgas-random.cpp"; path = "../../sources/galgas-random.cpp"; sourceTree = "<group>"; };
+		CF598B6A2B32044A0005B4C2 /* BigSigned-multiply.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-multiply.cpp"; path = "../../sources/BigSigned-multiply.cpp"; sourceTree = "<group>"; };
+		CF598B6B2B32044A0005B4C2 /* BigSigned-conversions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-conversions.cpp"; path = "../../sources/BigSigned-conversions.cpp"; sourceTree = "<group>"; };
+		CF598B6C2B32044A0005B4C2 /* BigSigned-bit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-bit.cpp"; path = "../../sources/BigSigned-bit.cpp"; sourceTree = "<group>"; };
+		CF598B6D2B32044A0005B4C2 /* chunk-U32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "chunk-U32.h"; path = "../../sources/chunk-U32.h"; sourceTree = "<group>"; };
+		CF598B6E2B32044A0005B4C2 /* ChunkSharedArray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ChunkSharedArray.cpp; path = ../../sources/ChunkSharedArray.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF598B372B3204260005B4C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF598B312B3204260005B4C2 = {
+			isa = PBXGroup;
+			children = (
+				CF598B3C2B3204260005B4C2 /* xcode-exhaustive-check */,
+				CF598B3B2B3204260005B4C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF598B3B2B3204260005B4C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF598B3A2B3204260005B4C2 /* xcode-exhaustive-check */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF598B3C2B3204260005B4C2 /* xcode-exhaustive-check */ = {
+			isa = PBXGroup;
+			children = (
+				CF598B602B32044A0005B4C2 /* BigSigned-add.cpp */,
+				CF598B6C2B32044A0005B4C2 /* BigSigned-bit.cpp */,
+				CF598B492B32044A0005B4C2 /* BigSigned-chunk-operations.cpp */,
+				CF598B4B2B32044A0005B4C2 /* BigSigned-constructors.cpp */,
+				CF598B6B2B32044A0005B4C2 /* BigSigned-conversions.cpp */,
+				CF598B4C2B32044A0005B4C2 /* BigSigned-divide.cpp */,
+				CF598B592B32044A0005B4C2 /* BigSigned-logic-operations.cpp */,
+				CF598B6A2B32044A0005B4C2 /* BigSigned-multiply.cpp */,
+				CF598B5D2B32044A0005B4C2 /* BigSigned-print.cpp */,
+				CF598B5B2B32044A0005B4C2 /* BigSigned-shifts.cpp */,
+				CF598B642B32044A0005B4C2 /* BigSigned-subtract.cpp */,
+				CF598B562B32044A0005B4C2 /* BigSigned-utilities.cpp */,
+				CF598B5C2B32044A0005B4C2 /* BigSigned.cpp */,
+				CF598B672B32044A0005B4C2 /* BigSigned.h */,
+				CF598B462B32044A0005B4C2 /* BigUnsigned-add.cpp */,
+				CF598B4F2B32044A0005B4C2 /* BigUnsigned-bit.cpp */,
+				CF598B582B32044A0005B4C2 /* BigUnsigned-chunk-operations.cpp */,
+				CF598B572B32044A0005B4C2 /* BigUnsigned-constructors.cpp */,
+				CF598B632B32044A0005B4C2 /* BigUnsigned-conversions.cpp */,
+				CF598B622B32044A0005B4C2 /* BigUnsigned-divide-naive.cpp */,
+				CF598B4D2B32044A0005B4C2 /* BigUnsigned-divide.cpp */,
+				CF598B522B32044A0005B4C2 /* BigUnsigned-logic-operations.cpp */,
+				CF598B682B32044A0005B4C2 /* BigUnsigned-multiply.cpp */,
+				CF598B5A2B32044A0005B4C2 /* BigUnsigned-print.cpp */,
+				CF598B532B32044A0005B4C2 /* BigUnsigned-shifts.cpp */,
+				CF598B5E2B32044A0005B4C2 /* BigUnsigned-subtract.cpp */,
+				CF598B512B32044A0005B4C2 /* BigUnsigned-utilities.cpp */,
+				CF598B552B32044A0005B4C2 /* BigUnsigned.h */,
+				CF598B4E2B32044A0005B4C2 /* chunk-U8.h */,
+				CF598B5F2B32044A0005B4C2 /* chunk-U16.h */,
+				CF598B6D2B32044A0005B4C2 /* chunk-U32.h */,
+				CF598B612B32044A0005B4C2 /* chunk-U64.h */,
+				CF598B652B32044A0005B4C2 /* ChunkSelectSize.h */,
+				CF598B6E2B32044A0005B4C2 /* ChunkSharedArray.cpp */,
+				CF598B472B32044A0005B4C2 /* ChunkSharedArray.h */,
+				CF598B692B32044A0005B4C2 /* galgas-random.cpp */,
+				CF598B662B32044A0005B4C2 /* galgas-random.h */,
+				CF598B482B32044A0005B4C2 /* M_machine.h */,
+				CF598B4A2B32044A0005B4C2 /* M_SourceLocation.h */,
+				CF598B542B32044A0005B4C2 /* MF_Assert.cpp */,
+				CF598B502B32044A0005B4C2 /* MF_Assert.h */,
+				CF598B442B32043A0005B4C2 /* main-exhaustive-check.cpp */,
+			);
+			path = "xcode-exhaustive-check";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF598B392B3204260005B4C2 /* xcode-exhaustive-check */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF598B412B3204260005B4C2 /* Build configuration list for PBXNativeTarget "xcode-exhaustive-check" */;
+			buildPhases = (
+				CF598B362B3204260005B4C2 /* Sources */,
+				CF598B372B3204260005B4C2 /* Frameworks */,
+				CF598B382B3204260005B4C2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "xcode-exhaustive-check";
+			productName = "xcode-exhaustive-check";
+			productReference = CF598B3A2B3204260005B4C2 /* xcode-exhaustive-check */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF598B322B3204260005B4C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					CF598B392B3204260005B4C2 = {
+						CreatedOnToolsVersion = 15.1;
+					};
+				};
+			};
+			buildConfigurationList = CF598B352B3204260005B4C2 /* Build configuration list for PBXProject "xcode-exhaustive-check" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF598B312B3204260005B4C2;
+			productRefGroup = CF598B3B2B3204260005B4C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF598B392B3204260005B4C2 /* xcode-exhaustive-check */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF598B362B3204260005B4C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF598B762B32044A0005B4C2 /* BigUnsigned-logic-operations.cpp in Sources */,
+				CF598B882B32044A0005B4C2 /* BigSigned-multiply.cpp in Sources */,
+				CF598B812B32044A0005B4C2 /* BigUnsigned-subtract.cpp in Sources */,
+				CF598B792B32044A0005B4C2 /* BigSigned-utilities.cpp in Sources */,
+				CF598B802B32044A0005B4C2 /* BigSigned-print.cpp in Sources */,
+				CF598B822B32044A0005B4C2 /* BigSigned-add.cpp in Sources */,
+				CF598B702B32044A0005B4C2 /* BigSigned-chunk-operations.cpp in Sources */,
+				CF598B782B32044A0005B4C2 /* MF_Assert.cpp in Sources */,
+				CF598B7E2B32044A0005B4C2 /* BigSigned-shifts.cpp in Sources */,
+				CF598B8A2B32044A0005B4C2 /* BigSigned-bit.cpp in Sources */,
+				CF598B712B32044A0005B4C2 /* BigSigned-constructors.cpp in Sources */,
+				CF598B752B32044A0005B4C2 /* BigUnsigned-utilities.cpp in Sources */,
+				CF598B8B2B32044A0005B4C2 /* ChunkSharedArray.cpp in Sources */,
+				CF598B7B2B32044A0005B4C2 /* BigUnsigned-chunk-operations.cpp in Sources */,
+				CF598B892B32044A0005B4C2 /* BigSigned-conversions.cpp in Sources */,
+				CF598B7F2B32044A0005B4C2 /* BigSigned.cpp in Sources */,
+				CF598B772B32044A0005B4C2 /* BigUnsigned-shifts.cpp in Sources */,
+				CF598B7C2B32044A0005B4C2 /* BigSigned-logic-operations.cpp in Sources */,
+				CF598B7A2B32044A0005B4C2 /* BigUnsigned-constructors.cpp in Sources */,
+				CF598B842B32044A0005B4C2 /* BigUnsigned-conversions.cpp in Sources */,
+				CF598B852B32044A0005B4C2 /* BigSigned-subtract.cpp in Sources */,
+				CF598B722B32044A0005B4C2 /* BigSigned-divide.cpp in Sources */,
+				CF598B452B32043A0005B4C2 /* main-exhaustive-check.cpp in Sources */,
+				CF598B732B32044A0005B4C2 /* BigUnsigned-divide.cpp in Sources */,
+				CF598B832B32044A0005B4C2 /* BigUnsigned-divide-naive.cpp in Sources */,
+				CF598B6F2B32044A0005B4C2 /* BigUnsigned-add.cpp in Sources */,
+				CF598B742B32044A0005B4C2 /* BigUnsigned-bit.cpp in Sources */,
+				CF598B872B32044A0005B4C2 /* galgas-random.cpp in Sources */,
+				CF598B7D2B32044A0005B4C2 /* BigUnsigned-print.cpp in Sources */,
+				CF598B862B32044A0005B4C2 /* BigUnsigned-multiply.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CF598B3F2B3204260005B4C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CF598B402B3204260005B4C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CF598B422B3204260005B4C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YW8QY74J2A;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CF598B432B3204260005B4C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YW8QY74J2A;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = DO_NOT_GENERATE_CHECKINGS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF598B352B3204260005B4C2 /* Build configuration list for PBXProject "xcode-exhaustive-check" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF598B3F2B3204260005B4C2 /* Debug */,
+				CF598B402B3204260005B4C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF598B412B3204260005B4C2 /* Build configuration list for PBXNativeTarget "xcode-exhaustive-check" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF598B422B3204260005B4C2 /* Debug */,
+				CF598B432B3204260005B4C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF598B322B3204260005B4C2 /* Project object */;
+}

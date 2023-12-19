@@ -104,19 +104,9 @@ class ChunkSharedArray final {
       mChunkArray = newChunkArray ;
       mChunkCapacity = newChunkCapacity ;
     }else if (mChunkCapacity < newChunkCapacity) {
-      ChunkUInt * newChunkArray = new ChunkUInt [newChunkCapacity + 1] ;
-      mChunkSharedArrayAllocationCount += 1 ;
-      mChunkSharedArrayCurrentlyAllocatedCount += 1 ;
-      newChunkArray [0] = 0 ; // Index 0: reference count (minus one)
-      for (size_t i = 1 ; i <= mChunkCount ; i++) {
-        newChunkArray [i] = mChunkArray [i] ;  // 1-Based Indexing
-      }
-      if (mChunkArray != nullptr) {
-        delete [] mChunkArray ;
-        MF_Assert (mChunkSharedArrayCurrentlyAllocatedCount > 0, "Zero!", 0, 0) ;
-        mChunkSharedArrayCurrentlyAllocatedCount -= 1 ;
-      }
-      mChunkArray = newChunkArray ;
+      mChunkSharedArrayAllocationCount += (mChunkArray == nullptr) ;
+      mChunkSharedArrayCurrentlyAllocatedCount += (mChunkArray == nullptr) ;
+      mChunkArray = (ChunkUInt *) realloc (mChunkArray, sizeof (ChunkUInt) * (newChunkCapacity + 1)) ;
       mChunkCapacity = newChunkCapacity ;
     }
   }

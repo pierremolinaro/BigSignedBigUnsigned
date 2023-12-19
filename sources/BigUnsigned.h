@@ -145,12 +145,10 @@ class BigUnsigned final {
 //--- Testing value
   public: bool fitsInUInt32 (void) const ;
   public: bool fitsInUInt64 (void) const ;
-  public: uint32_t requiredBitCountForUnsignedRepresentation (void) const ;
 
 //--- Value access (returns invalid values if receiver does not fit)
   public: uint32_t uint32 (void) const ;
   public: uint64_t uint64 (void) const ;
-  public: void extractBytesForUnsignedRepresentation (std::vector <uint8_t> & outValue) const ;
 
 //--- Private property
   private: ChunkSharedArray mSharedArray ;
