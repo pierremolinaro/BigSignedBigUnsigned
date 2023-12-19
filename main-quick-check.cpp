@@ -482,14 +482,6 @@ static void test_MultiplyingDividing_BigSigned (void) {
     BigSigned verif = divisor ;
     verif *= r.quotient () ;
     verif += r.remainder () ;
-//    bool ok = dividend == verif ;
-//    if (ok) {
-//      if (dividend.isPositive ()) {
-//        ok = (r.remainder () < divisor) && r.remainder ().isPositive () ;
-//      }else{
-//        ok = (r.remainder () > divisor) && (!r.remainder ().isPositive () || r.remainder ().isZero ()) ;
-//      }
-//    }
     if (dividend != verif) {
       std::cout << " error (i=" << i << ")\n" ;
       verif.printHex     ("Verif    ") ;

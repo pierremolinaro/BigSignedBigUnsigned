@@ -126,8 +126,6 @@ BigUnsigned BigUnsigned::utilityForNegativeOrNegative (const BigUnsigned & inOpe
     carry = r < carry ;
     result.mSharedArray.appendChunk (r COMMA_HERE) ;
   }
-//  MF_Assert (operandBorrow == 0, "operandBorrow not null", 0, 0) ;
-//  MF_Assert (thisBorrow == 0, "thisBorrow not null", 0, 0) ;
   if (carry == 0) {
     result.mSharedArray.removeLeadingZeroChunks (HERE) ;
   }else{
@@ -208,10 +206,7 @@ BigUnsigned BigUnsigned::utilityForPositiveAndNegative (const BigUnsigned & inNe
     borrow = negative < borrow ;
     const ChunkUInt andResult = positive & ~ n ;
     result.mSharedArray.appendChunk (andResult COMMA_HERE) ;
-//    const ChunkUInt positive = mSharedArray.chunkAtIndex (i COMMA_HERE) ;
-//    result.mSharedArray.appendChunk (positive COMMA_HERE) ;
   }
- // MF_Assert (borrow == 0, "borrow != 0", 0, 0) ;
   result.mSharedArray.removeLeadingZeroChunks (HERE) ;
   return result ;
 }

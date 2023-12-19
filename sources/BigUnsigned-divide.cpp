@@ -83,13 +83,10 @@ BigUnsignedQuotientRemainder BigUnsigned::divideByBigUnsigned (const BigUnsigned
           MF_Assert (! ((r < resultL) && (currentCarry == 0)), "double ovf", 0, 0) ;
           remainder.mSharedArray.subtractFromChunkAtIndex (resultL, remainderIndex COMMA_HERE) ;
         }
-  //        bool underflow = currentCarry > 0 ;
         const size_t remainderLastIndex = quotientIndex + divisor.mSharedArray.chunkCount () ;
         bool underflow = remainder.mSharedArray.chunkAtIndex (remainderLastIndex COMMA_HERE) < currentCarry ;
         remainder.mSharedArray.subtractFromChunkAtIndex (currentCarry, remainderLastIndex COMMA_HERE) ;
-  //        size_t adjustCount = 0 ;
         while (underflow) {
-  //          adjustCount += 1 ;
           MF_Assert (u64Quotient > 0, "Error", 0, 0) ; // Quotient is > 0, no underflow
           u64Quotient -= 1 ;
           ChunkUInt carry = 0 ; // 0 or 1
@@ -110,10 +107,6 @@ BigUnsignedQuotientRemainder BigUnsigned::divideByBigUnsigned (const BigUnsigned
           remainder.mSharedArray.setChunkAtIndex (lastRemainderValue, remainderLastIndex COMMA_HERE) ;
           underflow = carry == 0 ;
         }
-  //        if (maxAdjustCountOld < adjustCount) {
-  //          maxAdjustCountOld = adjustCount ;
-  //          std::cout << "maxAdjustCountOld " << maxAdjustCountOld << "\n" ;
-  //        }
       }
       quotient.mSharedArray.setChunkAtIndex (u64Quotient, quotientIndex COMMA_HERE) ;
     }

@@ -12,8 +12,6 @@
 
 //----------------------------------------------------------------------------------------
 
-//static size_t maxAdjustCountOld = 0 ;
-
 BigUnsignedQuotientRemainder BigUnsigned::naiveDivideByBigUnsigned (const BigUnsigned & inDivisor) const {
   if (inDivisor.isZero ()) { // Divide by 0
     std::cout << "Error " << __FILE__ << ":" << __LINE__ << "\n" ;
@@ -53,15 +51,11 @@ BigUnsignedQuotientRemainder BigUnsigned::naiveDivideByBigUnsigned (const BigUns
           currentCarry += r < resultL ;
           MF_Assert (! ((r < resultL) && (currentCarry == 0)), "double ovf", 0, 0) ;
           remainder.mSharedArray.subtractFromChunkAtIndex (resultL, remainderIndex COMMA_HERE) ;
-  //        std::cout << "§remainder [ " << remainderIndex << "] = 0x" << std::hex << uint64_t (remainder.mSharedArray.chunkAtIndex (remainderIndex COMMA_HERE)) << std::dec << "\n" ;
         }
-  //        bool underflow = currentCarry > 0 ;
         const size_t remainderLastIndex = quotientIndex + inDivisor.mSharedArray.chunkCount () ;
         bool underflow = remainder.mSharedArray.chunkAtIndex (remainderLastIndex COMMA_HERE) < currentCarry ;
         remainder.mSharedArray.subtractFromChunkAtIndex (currentCarry, remainderLastIndex COMMA_HERE) ;
-  //        size_t adjustCount = 0 ;
         while (underflow) {
-  //          adjustCount += 1 ;
           MF_Assert (u64Quotient > 0, "Error", 0, 0) ; // Quotient is > 0, no underflow
           u64Quotient -= 1 ;
           ChunkUInt carry = 0 ; // 0 or 1
@@ -82,10 +76,6 @@ BigUnsignedQuotientRemainder BigUnsigned::naiveDivideByBigUnsigned (const BigUns
           remainder.mSharedArray.setChunkAtIndex (lastRemainderValue, remainderLastIndex COMMA_HERE) ;
           underflow = carry == 0 ;
         }
-  //        if (maxAdjustCountOld < adjustCount) {
-  //          maxAdjustCountOld = adjustCount ;
-  //          std::cout << "maxAdjustCountOld " << maxAdjustCountOld << "\n" ;
-  //        }
       }
       quotient.mSharedArray.setChunkAtIndex (u64Quotient, quotientIndex COMMA_HERE) ;
     }
