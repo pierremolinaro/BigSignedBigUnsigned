@@ -3,16 +3,16 @@
 //
 //  Created by Pierre Molinaro on 30/11/2023.
 //
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 #include "BigSigned.h"
 #include "galgas-random.h"
 
-//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static int CHECK_COUNT = 1'000'000 ;
 
-//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static uint32_t msFromStart (const clock_t inStart) {
   clock_t duration = ::clock () - inStart ;
@@ -20,13 +20,13 @@ static uint32_t msFromStart (const clock_t inStart) {
   return uint32_t (duration) ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 #ifdef PRAGMA_MARK_ALLOWED
   #pragma mark BigUnsigned
 #endif
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void testBigUnsignedU8ArrayConstructor (void) {
   set_galgas_random_seed (0) ;
@@ -77,7 +77,7 @@ static void testBigUnsignedU8ArrayConstructor (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void testBigUnsignedU64ArrayConstructor (void) {
   set_galgas_random_seed (0) ;
@@ -114,7 +114,7 @@ static void testBigUnsignedU64ArrayConstructor (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void testBigUnsignedU64Constructor (void) {
   set_galgas_random_seed (0) ;
@@ -137,7 +137,7 @@ static void testBigUnsignedU64Constructor (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void testLogic_and_or_complemented_BigUnsigned (void) {
   set_galgas_random_seed (0) ;
@@ -165,7 +165,7 @@ static void testLogic_and_or_complemented_BigUnsigned (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void testLogic_xor_BigUnsigned (void) {
   set_galgas_random_seed (0) ;
@@ -191,7 +191,7 @@ static void testLogic_xor_BigUnsigned (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void testMultiplyingDividingBigUnsignedByChunkUInt (void) {
   set_galgas_random_seed (0) ;
@@ -217,7 +217,7 @@ static void testMultiplyingDividingBigUnsignedByChunkUInt (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void testBigUnsignedMultiplyPowerOfTwo (void) {
   set_galgas_random_seed (0) ;
@@ -242,7 +242,7 @@ static void testBigUnsignedMultiplyPowerOfTwo (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void testBigUnsignedRightAndLeftShifts (void) {
   set_galgas_random_seed (0) ;
@@ -265,7 +265,7 @@ static void testBigUnsignedRightAndLeftShifts (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void test_MultiplyingDividing_BigUnsigned (void) {
   set_galgas_random_seed (0) ;
@@ -322,7 +322,7 @@ static void test_MultiplyingDividing_BigUnsigned (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void testAddingSubtractingBigUnsigned (void) {
   set_galgas_random_seed (0) ;
@@ -345,9 +345,9 @@ static void testAddingSubtractingBigUnsigned (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 // page 191
-//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void pgcdComputing (void) {
   set_galgas_random_seed (0) ;
@@ -455,7 +455,7 @@ static void pgcdComputing (void) {
   std::cout << msFromStart (start) << " ms\n" ;
 }
 
-//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void somePrimeNumbers (void) {
   set_galgas_random_seed (0) ;
@@ -496,13 +496,13 @@ static void somePrimeNumbers (void) {
   std::cout << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 #ifdef PRAGMA_MARK_ALLOWED
   #pragma mark BigSigned
 #endif
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void testLogicComplementBigSigned (void) {
   set_galgas_random_seed (0) ;
@@ -528,7 +528,7 @@ static void testLogicComplementBigSigned (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void testLogic_bitSetting_BigSigned (void) {
   set_galgas_random_seed (0) ;
@@ -556,7 +556,7 @@ static void testLogic_bitSetting_BigSigned (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void testLogic_XOR_BigSigned (void) {
   set_galgas_random_seed (0) ;
@@ -581,7 +581,7 @@ static void testLogic_XOR_BigSigned (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void testLogic_and_or_complement_BigSigned (void) {
   set_galgas_random_seed (0) ;
@@ -608,7 +608,7 @@ static void testLogic_and_or_complement_BigSigned (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void testAddingSubtractingBigSigned (void) {
   set_galgas_random_seed (0) ;
@@ -632,7 +632,7 @@ static void testAddingSubtractingBigSigned (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void test_MultiplyingDividing_BigSigned (void) {
   set_galgas_random_seed (0) ;
@@ -669,7 +669,7 @@ static void test_MultiplyingDividing_BigSigned (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void test_LeftShift_BigSigned (void) {
   set_galgas_random_seed (0) ;
@@ -694,7 +694,7 @@ static void test_LeftShift_BigSigned (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void test_RightShift_BigSigned (void) {
   set_galgas_random_seed (0) ;
@@ -723,7 +723,7 @@ static void test_RightShift_BigSigned (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void test_MultiplyingDividing_BigSignedByChunkUInt (void) {
   set_galgas_random_seed (0) ;
@@ -749,13 +749,13 @@ static void test_MultiplyingDividing_BigSignedByChunkUInt (void) {
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 #ifdef PRAGMA_MARK_ALLOWED
   #pragma mark Main
 #endif
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 int main (int /* argc */ , const char * /* argv */[]) {
   const clock_t start = ::clock () ;
@@ -819,4 +819,4 @@ int main (int /* argc */ , const char * /* argv */[]) {
   return 0;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------

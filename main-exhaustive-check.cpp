@@ -3,12 +3,12 @@
 //
 //  Created by Pierre Molinaro on 30/11/2023.
 //
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 #include "BigSigned.h"
 #include "galgas-random.h"
 
-//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static uint32_t msFromStart (const clock_t inStart) {
   clock_t duration = ::clock () - inStart ;
@@ -16,13 +16,13 @@ static uint32_t msFromStart (const clock_t inStart) {
   return uint32_t (duration) ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 #ifdef PRAGMA_MARK_ALLOWED
   #pragma mark BigUnsigned, exhaustive check
 #endif
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void exhaustiveTest_decimalString_xString_BigUnsigned (const std::vector <BigUnsigned> & inBigUnsignedArray) {
   std::cout << "BigUnsigned: exhaustive test [0, " << (inBigUnsignedArray.size () - 1) << "] decimalString, xString... " ;
@@ -46,7 +46,7 @@ static void exhaustiveTest_decimalString_xString_BigUnsigned (const std::vector 
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void exhaustiveTest_and_or_complemented_BigUnsigned (const std::vector <BigUnsigned> & inBigUnsignedArray) {
   std::cout << "BigUnsigned: exhaustive test [0, " << (inBigUnsignedArray.size () - 1) << "] and, or, complement... " ;
@@ -75,7 +75,7 @@ static void exhaustiveTest_and_or_complemented_BigUnsigned (const std::vector <B
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void exhaustiveTest_xor_complemented_BigUnsigned (const std::vector <BigUnsigned> & inBigUnsignedArray) {
   std::cout << "BigUnsigned: exhaustive test [0, " << (inBigUnsignedArray.size () - 1) << "] xor... " ;
@@ -102,7 +102,7 @@ static void exhaustiveTest_xor_complemented_BigUnsigned (const std::vector <BigU
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void exhaustiveTest_MultiplyingDividing_BigUnsigned (const std::vector <BigUnsigned> & inBigUnsignedArray) {
   std::cout << "BigUnsigned: exhaustive test [0, " << (inBigUnsignedArray.size () - 1) << "] multiplying, dividing... " ;
@@ -143,7 +143,7 @@ static void exhaustiveTest_MultiplyingDividing_BigUnsigned (const std::vector <B
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void exhaustiveTest_AddingSubtractingBigUnsigned (const std::vector <BigUnsigned> & inBigUnsignedArray) {
   std::cout << "BigUnsigned: exhaustive test [0, " << (inBigUnsignedArray.size () - 1) << "] adding, subtracting... " ;
@@ -167,7 +167,7 @@ static void exhaustiveTest_AddingSubtractingBigUnsigned (const std::vector <BigU
   std::cout << "Ok " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 static void exhaustiveCheckUpTo (const uint64_t inUpperBound) {
   std::cout << "BigUnsigned: exhaustive test [0, " << (inUpperBound - 1) << "] ...\n" ;
@@ -185,13 +185,13 @@ static void exhaustiveCheckUpTo (const uint64_t inUpperBound) {
             << "] done in " << msFromStart (start) << " ms\n" ;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 #ifdef PRAGMA_MARK_ALLOWED
   #pragma mark Main
 #endif
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 int main (int /* argc */ , const char * /* argv */[]) {
   const clock_t start = ::clock () ;
@@ -234,4 +234,4 @@ int main (int /* argc */ , const char * /* argv */[]) {
   return 0;
 }
 
-//--------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------
