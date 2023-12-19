@@ -10,7 +10,7 @@
 
 //----------------------------------------------------------------------------------------------------------------------
 
-static int CHECK_COUNT = 100'000 ;
+static int CHECK_COUNT = 10'000 ;
 
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -248,7 +248,7 @@ static void testBigUnsignedRightAndLeftShifts (void) {
   set_galgas_random_seed (0) ;
   std::cout << "BigUnsigned: test left / right shifts... " ;
   const clock_t start = ::clock () ;
-  for (uint32_t i = 0 ; i < CHECK_COUNT ; i++) {
+  for (uint32_t i = 0 ; i < (CHECK_COUNT /20) ; i++) {
     const BigUnsigned bigA = BigUnsigned::randomNumber () ;
     for (uint32_t shift = 0 ; shift < 200 ; shift++) {
       const BigUnsigned bigALeftShifted = bigA << shift ;

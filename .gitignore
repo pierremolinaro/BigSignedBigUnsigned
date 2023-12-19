@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+main-quick-check-16-bits-chunks-debug
+main-quick-check-16-bits-chunks-release
+main-quick-check-32-bits-chunks-debug
+main-quick-check-32-bits-chunks-release
+main-quick-check-64-bits-chunks-debug
+main-quick-check-64-bits-chunks-release
+main-quick-check-8-bits-chunks-debug
+main-quick-check-8-bits-chunks-release
