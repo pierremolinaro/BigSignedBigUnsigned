@@ -10,10 +10,33 @@
 
 //----------------------------------------------------------------------------------------
 
-static uint32_t msFromStart (const clock_t inStart) {
-  clock_t duration = ::clock () - inStart ;
-  duration /= CLOCKS_PER_SEC / 1000 ;
-  return uint32_t (duration) ;
+static std::string timeFromStart (const clock_t inStart) {
+  const unsigned durationInMilliseconds = unsigned (::clock () - inStart) / (CLOCKS_PER_SEC / 1000) ;
+  const unsigned milliseconds = durationInMilliseconds % 1000 ;
+  const unsigned durationInSeconds = durationInMilliseconds / 1000 ;
+  const unsigned seconds = durationInSeconds % 60 ;
+  const unsigned durationInMinutes = durationInSeconds / 60 ;
+  const unsigned minutes = durationInMinutes % 60 ;
+  const unsigned hours = durationInMinutes / 60 ;
+  std::string result ;
+  if (hours > 0) {
+    result.append (std::to_string (hours)) ;
+    result.append (" h ") ;
+  }
+  if (minutes > 0) {
+    result.append (std::to_string (minutes)) ;
+    result.append (" min ") ;
+  }
+  if (seconds > 0) {
+    result.append (std::to_string (seconds)) ;
+    result.append (" s ") ;
+  }
+  result.append (std::to_string (milliseconds)) ;
+  result.append (" ms") ;
+  result.append (" (") ;
+  result.append (std::to_string (durationInMilliseconds)) ;
+  result.append (" ms)") ;
+  return result ;
 }
 
 //----------------------------------------------------------------------------------------
@@ -46,7 +69,7 @@ static void exhaustiveTest_decimalString_xString_BigUnsigned (const std::vector 
       exit (1) ;
     }
   }
-  std::cout << "Ok " << msFromStart (start) << " ms\n" ;
+  std::cout << "Ok " << timeFromStart (start) << "\n" ;
 }
 
 //----------------------------------------------------------------------------------------
@@ -78,7 +101,7 @@ static void exhaustiveTest_and_or_complemented_BigUnsigned (const std::vector <B
       }
     }
   }
-  std::cout << "Ok " << msFromStart (start) << " ms\n" ;
+  std::cout << "Ok " << timeFromStart (start) << "\n" ;
 }
 
 //----------------------------------------------------------------------------------------
@@ -108,7 +131,7 @@ static void exhaustiveTest_xor_complemented_BigUnsigned (const std::vector <BigU
       }
     }
   }
-  std::cout << "Ok " << msFromStart (start) << " ms\n" ;
+  std::cout << "Ok " << timeFromStart (start) << "\n" ;
 }
 
 //----------------------------------------------------------------------------------------
@@ -152,7 +175,7 @@ static void exhaustiveTest_MultiplyingDividing_BigUnsigned (const std::vector <B
       }
     }
   }
-  std::cout << "Ok " << msFromStart (start) << " ms\n" ;
+  std::cout << "Ok " << timeFromStart (start) << "\n" ;
 }
 
 //----------------------------------------------------------------------------------------
@@ -179,7 +202,7 @@ static void exhaustiveTest_AddingSubtractingBigUnsigned (const std::vector <BigU
       }
     }
   }
-  std::cout << "Ok " << msFromStart (start) << " ms\n" ;
+  std::cout << "Ok " << timeFromStart (start) << "\n" ;
 }
 
 //----------------------------------------------------------------------------------------
@@ -199,7 +222,7 @@ static void exhaustiveCheckUpTo (const uint64_t inUpperBound) {
   exhaustiveTest_AddingSubtractingBigUnsigned (bigUnsignedArray) ;
   exhaustiveTest_MultiplyingDividing_BigUnsigned (bigUnsignedArray) ;
   std::cout << "BigUnsigned: exhautive test [0, " << (inUpperBound - 1)
-            << "] done in " << msFromStart (start) << " ms\n" ;
+            << "] done in " << timeFromStart (start) << "\n" ;
 }
 
 //----------------------------------------------------------------------------------------
@@ -243,11 +266,7 @@ int main (int /* argc */ , const char * /* argv */[]) {
   std::cout << "ChunkSharedArray Currently Allocated Count: "
             << ChunkSharedArray::chunkSharedArrayCurrentlyAllocatedCount () << "\n" ;
 //---
-  const uint32_t duration = msFromStart (start) ;
-  const uint32_t milliseconds = duration % 1000 ;
-  const uint32_t seconds = (duration / 1000) % 60 ;
-  const uint32_t minutes = (duration / 1000) / 60 ;
-  std::cout << "Done in " << minutes << " min " << seconds << " s " << milliseconds << " ms\n" ;
+  std::cout << "Done in " << timeFromStart (start) << "\n" ;
   return 0;
 }
 

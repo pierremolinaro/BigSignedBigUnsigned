@@ -187,11 +187,7 @@ int main (int /* argc */ , const char * /* argv */[]) {
   std::cout << "ChunkSharedArray Currently Allocated Count: "
             << ChunkSharedArray::chunkSharedArrayCurrentlyAllocatedCount () << "\n" ;
 //---
-  const uint32_t duration = msFromStart (start) ;
-  const uint32_t milliseconds = duration % 1000 ;
-  const uint32_t seconds = (duration / 1000) % 60 ;
-  const uint32_t minutes = (duration / 1000) / 60 ;
-  std::cout << "Done in " << minutes << " min " << seconds << " s " << milliseconds << " ms\n" ;
+  std::cout << "Demo done in " << msFromStart (start) << " ms\n" ;
   return 0;
 }
 
