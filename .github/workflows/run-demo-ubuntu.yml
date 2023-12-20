@@ -7,7 +7,7 @@ on:
 
 jobs:
   analyze:
-    name: Run
+    name: RunDemoUbuntu
     runs-on: ${{ 'ubuntu-20.04' }}
     timeout-minutes: ${{ 360 }}
     permissions:
@@ -19,4 +19,4 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - run: ./+compile-only-all-quick-checks.py
+    - run: ./+run-demo.py
