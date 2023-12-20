@@ -97,7 +97,7 @@ runCommand (invocationList () + [
   "-DUSE_8_BITS_CHUNKS",
   "-o", "main-demo-8-bits-chunks-debug"
 ])
-# runCommand (["./main-demo-8-bits-chunks-debug"])
+runCommand (["./main-demo-8-bits-chunks-debug"])
 # print (BOLD_BLUE () + "8 bits chunk, release mode" + ENDC ())
 # print ("Compiling...") ;
 # runCommand (invocationList () + [
