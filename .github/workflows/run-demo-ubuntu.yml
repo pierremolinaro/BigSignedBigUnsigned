@@ -3,7 +3,7 @@ name: "RunDemoUbuntu"
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   analyze:
