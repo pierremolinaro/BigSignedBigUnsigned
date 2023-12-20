@@ -19,5 +19,5 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - run: |
-        ./+run-demo.py
+    - name: Build and run
+    - run: ./+run-demo.py
