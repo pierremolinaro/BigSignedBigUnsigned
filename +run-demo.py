@@ -53,19 +53,6 @@ def runCommand (command) :
 def invocationList () :
   result = ["g++", "-std=c++14", "-O2"]
   result.append ("-Isources")
-#   result.append ("sources/BigSigned-add.cpp")
-#   result.append ("sources/BigSigned-bit.cpp")
-#   result.append ("sources/BigSigned-chunk-operations.cpp")
-#   result.append ("sources/BigSigned-constructors.cpp")
-#   result.append ("sources/BigSigned-conversions.cpp")
-#   result.append ("sources/BigSigned-divide.cpp")
-#   result.append ("sources/BigSigned-logic-operations.cpp")
-#   result.append ("sources/BigSigned-multiply.cpp")
-#   result.append ("sources/BigSigned-print.cpp")
-#   result.append ("sources/BigSigned-shifts.cpp")
-#   result.append ("sources/BigSigned-subtract.cpp")
-#   result.append ("sources/BigSigned-utilities.cpp")
-#   result.append ("sources/BigSigned.cpp")
   result.append ("sources/BigUnsigned-add.cpp")
   result.append ("sources/BigUnsigned-bit.cpp")
   result.append ("sources/BigUnsigned-chunk-operations.cpp")
@@ -97,6 +84,7 @@ runCommand (invocationList () + [
   "-DUSE_8_BITS_CHUNKS",
   "-o", "main-demo-8-bits-chunks-debug"
 ])
+print ("", flush=True)
 runCommand (["./main-demo-8-bits-chunks-debug"])
 # print (BOLD_BLUE () + "8 bits chunk, release mode" + ENDC ())
 # print ("Compiling...") ;
