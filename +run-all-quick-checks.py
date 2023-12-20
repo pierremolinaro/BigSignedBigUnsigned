@@ -70,7 +70,7 @@ def invocationList () :
   result.append ("sources/BigUnsigned-subtract.cpp")
   result.append ("sources/BigUnsigned-utilities.cpp")
   result.append ("sources/ChunkSharedArray.cpp")
-  result.append ("sources/MF_Assert.cpp")
+  result.append ("sources/macroAssert.cpp")
   result.append ("sources/galgas-random.cpp")
   return result
 

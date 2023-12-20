@@ -25,7 +25,10 @@ static uint32_t msFromStart (const clock_t inStart) {
 //----------------------------------------------------------------------------------------
 
 static void exhaustiveTest_decimalString_xString_BigUnsigned (const std::vector <BigUnsigned> & inBigUnsignedArray) {
-  std::cout << "BigUnsigned: exhaustive test [0, " << (inBigUnsignedArray.size () - 1) << "] decimalString, xString... " ;
+  std::cout << "BigUnsigned: exhaustive test [0, "
+            << (inBigUnsignedArray.size () - 1)
+            << "] decimalString, xString... "
+            << std::flush ;
   const clock_t start = ::clock () ;
   for (size_t i = 0 ; i < inBigUnsignedArray.size () ; i++) {
     const std::string s = inBigUnsignedArray [i].decimalString () ;
@@ -49,7 +52,10 @@ static void exhaustiveTest_decimalString_xString_BigUnsigned (const std::vector 
 //----------------------------------------------------------------------------------------
 
 static void exhaustiveTest_and_or_complemented_BigUnsigned (const std::vector <BigUnsigned> & inBigUnsignedArray) {
-  std::cout << "BigUnsigned: exhaustive test [0, " << (inBigUnsignedArray.size () - 1) << "] and, or, complement... " ;
+  std::cout << "BigUnsigned: exhaustive test [0, "
+            << (inBigUnsignedArray.size () - 1)
+            << "] and, or, complement... "
+            << std::flush ;
   const clock_t start = ::clock () ;
   for (size_t a = 0 ; a < inBigUnsignedArray.size () ; a++) {
     const BigUnsigned bigA = inBigUnsignedArray [a] ;
@@ -78,7 +84,10 @@ static void exhaustiveTest_and_or_complemented_BigUnsigned (const std::vector <B
 //----------------------------------------------------------------------------------------
 
 static void exhaustiveTest_xor_complemented_BigUnsigned (const std::vector <BigUnsigned> & inBigUnsignedArray) {
-  std::cout << "BigUnsigned: exhaustive test [0, " << (inBigUnsignedArray.size () - 1) << "] xor... " ;
+  std::cout << "BigUnsigned: exhaustive test [0, "
+            << (inBigUnsignedArray.size () - 1)
+            << "] xor... "
+            << std::flush ;
   const clock_t start = ::clock () ;
   for (size_t a = 0 ; a < inBigUnsignedArray.size () ; a++) {
     const BigUnsigned bigA = inBigUnsignedArray [a] ;
@@ -105,7 +114,10 @@ static void exhaustiveTest_xor_complemented_BigUnsigned (const std::vector <BigU
 //----------------------------------------------------------------------------------------
 
 static void exhaustiveTest_MultiplyingDividing_BigUnsigned (const std::vector <BigUnsigned> & inBigUnsignedArray) {
-  std::cout << "BigUnsigned: exhaustive test [0, " << (inBigUnsignedArray.size () - 1) << "] multiplying, dividing... " ;
+  std::cout << "BigUnsigned: exhaustive test [0, "
+            << (inBigUnsignedArray.size () - 1)
+            << "] multiplying, dividing... "
+            << std::flush ;
   const clock_t start = ::clock () ;
   for (size_t dividendIdx = 0 ; dividendIdx < inBigUnsignedArray.size () ; dividendIdx++) {
     const BigUnsigned dividend = inBigUnsignedArray [dividendIdx] ;
@@ -146,7 +158,10 @@ static void exhaustiveTest_MultiplyingDividing_BigUnsigned (const std::vector <B
 //----------------------------------------------------------------------------------------
 
 static void exhaustiveTest_AddingSubtractingBigUnsigned (const std::vector <BigUnsigned> & inBigUnsignedArray) {
-  std::cout << "BigUnsigned: exhaustive test [0, " << (inBigUnsignedArray.size () - 1) << "] adding, subtracting... " ;
+  std::cout << "BigUnsigned: exhaustive test [0, "
+            << (inBigUnsignedArray.size () - 1)
+            << "] adding, subtracting... "
+            << std::flush ;
   const clock_t start = ::clock () ;
   for (size_t a = 0 ; a < inBigUnsignedArray.size () ; a++) {
     const BigUnsigned bigA = inBigUnsignedArray [a] ;
@@ -170,7 +185,9 @@ static void exhaustiveTest_AddingSubtractingBigUnsigned (const std::vector <BigU
 //----------------------------------------------------------------------------------------
 
 static void exhaustiveCheckUpTo (const uint64_t inUpperBound) {
-  std::cout << "BigUnsigned: exhaustive test [0, " << (inUpperBound - 1) << "] ...\n" ;
+  std::cout << "BigUnsigned: exhaustive test [0, "
+            << (inUpperBound - 1) << "] ...\n"
+            << std::flush ;
   const clock_t start = ::clock () ;
   std::vector <BigUnsigned> bigUnsignedArray ;
   for (uint64_t i = 0 ; i < inUpperBound ; i++) {

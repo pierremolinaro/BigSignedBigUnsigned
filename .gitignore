@@ -38,3 +38,12 @@ main-quick-check-64-bits-chunks-debug
 main-quick-check-64-bits-chunks-release
 main-quick-check-8-bits-chunks-debug
 main-quick-check-8-bits-chunks-release
+main-demo-16-bits-chunks-debug
+main-demo-16-bits-chunks-release
+main-demo-32-bits-chunks-debug
+main-demo-32-bits-chunks-release
+main-demo-64-bits-chunks-debug
+main-demo-64-bits-chunks-release
+main-demo-8-bits-chunks-debug
+main-demo-8-bits-chunks-release
+main-exhaustive-check-8-bits-chunks-debug

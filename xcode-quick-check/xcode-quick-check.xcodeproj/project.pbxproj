@@ -16,7 +16,7 @@
 		CF598B192B3202620005B4C2 /* BigUnsigned-utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598AF12B3202620005B4C2 /* BigUnsigned-utilities.cpp */; };
 		CF598B1A2B3202620005B4C2 /* BigSigned-chunk-operations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598AF32B3202620005B4C2 /* BigSigned-chunk-operations.cpp */; };
 		CF598B1B2B3202620005B4C2 /* BigUnsigned-subtract.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598AF42B3202620005B4C2 /* BigUnsigned-subtract.cpp */; };
-		CF598B1C2B3202620005B4C2 /* MF_Assert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598AF52B3202620005B4C2 /* MF_Assert.cpp */; };
+		CF598B1C2B3202620005B4C2 /* macroAssert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598AF52B3202620005B4C2 /* macroAssert.cpp */; };
 		CF598B1D2B3202620005B4C2 /* BigUnsigned-shifts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598AF62B3202620005B4C2 /* BigUnsigned-shifts.cpp */; };
 		CF598B1E2B3202620005B4C2 /* BigUnsigned-multiply.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598AF72B3202620005B4C2 /* BigUnsigned-multiply.cpp */; };
 		CF598B1F2B3202620005B4C2 /* BigSigned-print.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598AF82B3202620005B4C2 /* BigSigned-print.cpp */; };
@@ -64,11 +64,11 @@
 		CF598AF22B3202620005B4C2 /* galgas-random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "galgas-random.h"; path = "../../sources/galgas-random.h"; sourceTree = "<group>"; };
 		CF598AF32B3202620005B4C2 /* BigSigned-chunk-operations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-chunk-operations.cpp"; path = "../../sources/BigSigned-chunk-operations.cpp"; sourceTree = "<group>"; };
 		CF598AF42B3202620005B4C2 /* BigUnsigned-subtract.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-subtract.cpp"; path = "../../sources/BigUnsigned-subtract.cpp"; sourceTree = "<group>"; };
-		CF598AF52B3202620005B4C2 /* MF_Assert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MF_Assert.cpp; path = ../../sources/MF_Assert.cpp; sourceTree = "<group>"; };
+		CF598AF52B3202620005B4C2 /* macroAssert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = macroAssert.cpp; path = ../../sources/macroAssert.cpp; sourceTree = "<group>"; };
 		CF598AF62B3202620005B4C2 /* BigUnsigned-shifts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-shifts.cpp"; path = "../../sources/BigUnsigned-shifts.cpp"; sourceTree = "<group>"; };
 		CF598AF72B3202620005B4C2 /* BigUnsigned-multiply.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-multiply.cpp"; path = "../../sources/BigUnsigned-multiply.cpp"; sourceTree = "<group>"; };
 		CF598AF82B3202620005B4C2 /* BigSigned-print.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-print.cpp"; path = "../../sources/BigSigned-print.cpp"; sourceTree = "<group>"; };
-		CF598AF92B3202620005B4C2 /* MF_Assert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MF_Assert.h; path = ../../sources/MF_Assert.h; sourceTree = "<group>"; };
+		CF598AF92B3202620005B4C2 /* macroAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = macroAssert.h; path = ../../sources/macroAssert.h; sourceTree = "<group>"; };
 		CF598AFA2B3202620005B4C2 /* BigSigned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BigSigned.h; path = ../../sources/BigSigned.h; sourceTree = "<group>"; };
 		CF598AFB2B3202620005B4C2 /* BigSigned.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BigSigned.cpp; path = ../../sources/BigSigned.cpp; sourceTree = "<group>"; };
 		CF598AFC2B3202620005B4C2 /* BigSigned-add.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-add.cpp"; path = "../../sources/BigSigned-add.cpp"; sourceTree = "<group>"; };
@@ -166,8 +166,8 @@
 				CF598AF22B3202620005B4C2 /* galgas-random.h */,
 				CF598B042B3202620005B4C2 /* M_machine.h */,
 				CF598B0E2B3202620005B4C2 /* M_SourceLocation.h */,
-				CF598AF52B3202620005B4C2 /* MF_Assert.cpp */,
-				CF598AF92B3202620005B4C2 /* MF_Assert.h */,
+				CF598AF52B3202620005B4C2 /* macroAssert.cpp */,
+				CF598AF92B3202620005B4C2 /* macroAssert.h */,
 				CF598AE92B32024D0005B4C2 /* main-quick-check.cpp */,
 			);
 			path = "xcode-quick-check";
@@ -235,7 +235,7 @@
 				CF598B202B3202620005B4C2 /* BigSigned.cpp in Sources */,
 				CF598B292B3202620005B4C2 /* BigSigned-utilities.cpp in Sources */,
 				CF598B212B3202620005B4C2 /* BigSigned-add.cpp in Sources */,
-				CF598B1C2B3202620005B4C2 /* MF_Assert.cpp in Sources */,
+				CF598B1C2B3202620005B4C2 /* macroAssert.cpp in Sources */,
 				CF598B182B3202620005B4C2 /* BigUnsigned-constructors.cpp in Sources */,
 				CF598B2F2B3202620005B4C2 /* BigSigned-divide.cpp in Sources */,
 				CF598B272B3202620005B4C2 /* BigSigned-conversions.cpp in Sources */,

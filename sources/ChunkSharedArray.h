@@ -38,7 +38,7 @@ class ChunkSharedArray final {
     if (mChunkArray != nullptr) {
       if (mChunkArray [0] == 0) {
         delete [] mChunkArray ;
-        MF_Assert (mChunkSharedArrayCurrentlyAllocatedCount > 0, "Zero!", 0, 0) ;
+        macroAssert (mChunkSharedArrayCurrentlyAllocatedCount > 0, "Zero!", 0, 0) ;
         mChunkSharedArrayCurrentlyAllocatedCount -= 1 ;
       }else{
         mChunkArray [0] -= 1 ;
@@ -65,7 +65,7 @@ class ChunkSharedArray final {
     if (mChunkArray != nullptr) {
       if (mChunkArray [0] == 0) {
         delete [] mChunkArray ;
-        MF_Assert (mChunkSharedArrayCurrentlyAllocatedCount > 0, "Zero!", 0, 0) ;
+        macroAssert (mChunkSharedArrayCurrentlyAllocatedCount > 0, "Zero!", 0, 0) ;
         mChunkSharedArrayCurrentlyAllocatedCount -= 1 ;
       }else{
         mChunkArray [0] -= 1 ; // Release
@@ -113,19 +113,19 @@ class ChunkSharedArray final {
 
 //--- Append objects at the end of the array
   public: void appendChunk (const ChunkUInt inChunkValue COMMA_LOCATION_ARGS) {
-    MF_AssertThere (isUniquelyReferenced (), "Uniquely referenced error", 0, 0) ;
+    macroAssertThere (isUniquelyReferenced (), "Uniquely referenced error", 0, 0) ;
     mChunkCount += 1 ;
-    MF_AssertThere (mChunkCount <= mChunkCapacity, "append overflow", 0, 0) ;
+    macroAssertThere (mChunkCount <= mChunkCapacity, "append overflow", 0, 0) ;
     mChunkArray [mChunkCount] = inChunkValue ; // 1-Based Indexing
   }
 
   public: void appendChunks (const size_t inChunkCount,
                              const ChunkUInt inChunkValue
                              COMMA_LOCATION_ARGS) {
-    MF_AssertThere (isUniquelyReferenced (), "Uniquely referenced error", 0, 0) ;
+    macroAssertThere (isUniquelyReferenced (), "Uniquely referenced error", 0, 0) ;
     if (inChunkCount > 0) {
       const size_t newChunkCount = mChunkCount + inChunkCount ;
-      MF_AssertThere (newChunkCount <= mChunkCapacity, "append overflow", 0, 0) ;
+      macroAssertThere (newChunkCount <= mChunkCapacity, "append overflow", 0, 0) ;
       for (size_t i = mChunkCount + 1 ; i <= newChunkCount ; i++) {
         mChunkArray [i] = inChunkValue ; // 1-Based Indexing
       }
@@ -134,10 +134,10 @@ class ChunkSharedArray final {
   }
 
   public: void appendRandomChunks (const size_t inChunkCount COMMA_LOCATION_ARGS) {
-    MF_AssertThere (isUniquelyReferenced (), "Uniquely referenced error", 0, 0) ;
+    macroAssertThere (isUniquelyReferenced (), "Uniquely referenced error", 0, 0) ;
     if (inChunkCount > 0) {
       const size_t newChunkCount = mChunkCount + inChunkCount ;
-      MF_AssertThere (newChunkCount <= mChunkCapacity, "append overflow", 0, 0) ;
+      macroAssertThere (newChunkCount <= mChunkCapacity, "append overflow", 0, 0) ;
       for (size_t i = mChunkCount + 1 ; i <= newChunkCount ; i++) {
         mChunkArray [i] = 0 ;
       }
@@ -147,7 +147,7 @@ class ChunkSharedArray final {
 
 //--- Remove leading zeros
   public: void removeLeadingZeroChunks (LOCATION_ARGS) {
-    MF_AssertThere (isUniquelyReferenced (), "Uniquely referenced error", 0, 0) ;
+    macroAssertThere (isUniquelyReferenced (), "Uniquely referenced error", 0, 0) ;
     while ((mChunkCount > 0) && (mChunkArray [mChunkCount] == 0)) { // 1-Based Indexing
       mChunkCount -= 1 ;
     }
@@ -171,7 +171,7 @@ class ChunkSharedArray final {
   public: void setChunkAtIndex (const ChunkUInt inChunkValue,
                                 const size_t inChunkIndex
                                 COMMA_LOCATION_ARGS) {
-    MF_AssertThere (isUniquelyReferenced (), "Uniquely referenced error", 0, 0) ;
+    macroAssertThere (isUniquelyReferenced (), "Uniquely referenced error", 0, 0) ;
     #ifndef DO_NOT_GENERATE_CHECKINGS
       checkChunkIndex (inChunkIndex COMMA_THERE) ;
     #endif
@@ -181,7 +181,7 @@ class ChunkSharedArray final {
   public: void subtractFromChunkAtIndex (const ChunkUInt inChunkValue,
                                          const size_t inChunkIndex
                                          COMMA_LOCATION_ARGS) {
-    MF_AssertThere (isUniquelyReferenced (), "Uniquely referenced error", 0, 0) ;
+    macroAssertThere (isUniquelyReferenced (), "Uniquely referenced error", 0, 0) ;
     #ifndef DO_NOT_GENERATE_CHECKINGS
       checkChunkIndex (inChunkIndex COMMA_THERE) ;
     #endif
@@ -191,8 +191,8 @@ class ChunkSharedArray final {
 //--- Index checking
   #ifndef DO_NOT_GENERATE_CHECKINGS
     protected: void checkChunkIndex (const size_t inChunkIndex COMMA_LOCATION_ARGS) const {
-      MF_AssertThere (inChunkIndex > 0, "inChunkIndex (%llu) < 0", int64_t (inChunkIndex), 0) ;
-      MF_AssertThere (inChunkIndex <= mChunkCount, "inChunkIndex (%llu) >= mChunkCount (%llu)", int64_t (inChunkIndex), int64_t (mChunkCount)) ;
+      macroAssertThere (inChunkIndex > 0, "inChunkIndex (%llu) < 0", int64_t (inChunkIndex), 0) ;
+      macroAssertThere (inChunkIndex <= mChunkCount, "inChunkIndex (%llu) >= mChunkCount (%llu)", int64_t (inChunkIndex), int64_t (mChunkCount)) ;
     }
   #endif
 

@@ -30,7 +30,7 @@ static uint32_t msFromStart (const clock_t inStart) {
 
 static void testBigUnsignedU8ArrayConstructor (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigUnsigned: test U8 array constructor, U8 access... " ;
+  std::cout << "BigUnsigned: test U8 array constructor, U8 access... " << std::flush ;
   const size_t LENGTH = 41 ;
   uint8_t u8Array [LENGTH] ;
   std::string refString ;
@@ -81,7 +81,7 @@ static void testBigUnsignedU8ArrayConstructor (void) {
 
 static void testBigUnsignedU64ArrayConstructor (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigUnsigned: test U64 array constructor... " ;
+  std::cout << "BigUnsigned: test U64 array constructor... " << std::flush ;
   const size_t LENGTH = 20 ;
   uint64_t u64Array [LENGTH] ;
   std::string refString ;
@@ -118,7 +118,7 @@ static void testBigUnsignedU64ArrayConstructor (void) {
 
 static void testBigUnsignedU64Constructor (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigUnsigned: test U64 constructor... " ;
+  std::cout << "BigUnsigned: test U64 constructor... " << std::flush ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     uint64_t v = galgas_random () ;
@@ -141,7 +141,7 @@ static void testBigUnsignedU64Constructor (void) {
 
 static void testLogic_and_or_complemented_BigUnsigned (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigUnsigned: and, or, complement... " ;
+  std::cout << "BigUnsigned: and, or, complement... " << std::flush ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     const BigUnsigned bigA = BigUnsigned::randomNumber () ;
@@ -169,7 +169,7 @@ static void testLogic_and_or_complemented_BigUnsigned (void) {
 
 static void testLogic_xor_BigUnsigned (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigUnsigned: xor... " ;
+  std::cout << "BigUnsigned: xor... " << std::flush ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     const BigUnsigned bigA = BigUnsigned::randomNumber () ;
@@ -221,7 +221,7 @@ static void testMultiplyingDividingBigUnsignedByChunkUInt (void) {
 
 static void testBigUnsignedMultiplyPowerOfTwo (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigUnsigned: test multiplying power of two... " ;
+  std::cout << "BigUnsigned: test multiplying power of two... " << std::flush ;
   const clock_t start = ::clock () ;
   for (uint32_t i = 0 ; i < 1000 ; i++) {
     const BigUnsigned bigA = BigUnsigned::powerOfTwo (i) ;
@@ -246,7 +246,7 @@ static void testBigUnsignedMultiplyPowerOfTwo (void) {
 
 static void testBigUnsignedRightAndLeftShifts (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigUnsigned: test left / right shifts... " ;
+  std::cout << "BigUnsigned: test left / right shifts... " << std::flush ;
   const clock_t start = ::clock () ;
   for (uint32_t i = 0 ; i < (CHECK_COUNT /20) ; i++) {
     const BigUnsigned bigA = BigUnsigned::randomNumber () ;
@@ -270,6 +270,7 @@ static void testBigUnsignedRightAndLeftShifts (void) {
 static void test_MultiplyingDividing_BigUnsigned (void) {
   set_galgas_random_seed (0) ;
   const clock_t start = ::clock () ;
+  std::cout << "BigUnsigned: test multiplying, dividing... " << std::flush ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     const BigUnsigned dividend = BigUnsigned::randomNumber () ;
     BigUnsigned divisor ;
@@ -311,7 +312,7 @@ static void test_MultiplyingDividing_BigUnsigned (void) {
 
 static void testAddingSubtractingBigUnsigned (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigUnsigned: test adding, subtracting... " ;
+  std::cout << "BigUnsigned: test adding, subtracting... " << std::flush ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     const BigUnsigned bigA = BigUnsigned::randomNumber () ;
@@ -327,7 +328,7 @@ static void testAddingSubtractingBigUnsigned (void) {
       exit (1) ;
     }
   }
-  std::cout << "Ok " << msFromStart (start) << " ms\n" ;
+  std::cout << "Ok " << msFromStart (start) << " ms\n" << std::flush ;
 }
 
 //----------------------------------------------------------------------------------------
@@ -340,7 +341,7 @@ static void testAddingSubtractingBigUnsigned (void) {
 
 static void testLogicComplementBigSigned (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigSigned: logic complement... " ;
+  std::cout << "BigSigned: logic complement... " << std::flush ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     const BigSigned bigA = BigSigned::randomNumber () ;
@@ -366,7 +367,7 @@ static void testLogicComplementBigSigned (void) {
 
 static void testLogic_bitSetting_BigSigned (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigSigned: bit set / reset... " ;
+  std::cout << "BigSigned: bit set / reset... " << std::flush ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     const BigSigned bigA = BigSigned::randomNumber () ;
@@ -394,7 +395,7 @@ static void testLogic_bitSetting_BigSigned (void) {
 
 static void testLogic_XOR_BigSigned (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigSigned: xor... " ;
+  std::cout << "BigSigned: xor... " << std::flush ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     const BigSigned bigA = BigSigned::randomNumber () ;
@@ -419,7 +420,7 @@ static void testLogic_XOR_BigSigned (void) {
 
 static void testLogic_and_or_complement_BigSigned (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigSigned: and, or, complement... " ;
+  std::cout << "BigSigned: and, or, complement... " << std::flush ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     const BigSigned bigA = BigSigned::randomNumber () ;
@@ -446,7 +447,7 @@ static void testLogic_and_or_complement_BigSigned (void) {
 
 static void testAddingSubtractingBigSigned (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigSigned: test adding, subtracting... " ;
+  std::cout << "BigSigned: test adding, subtracting... " << std::flush ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     const BigSigned bigA = BigSigned::randomNumber () ;
@@ -470,7 +471,7 @@ static void testAddingSubtractingBigSigned (void) {
 
 static void test_MultiplyingDividing_BigSigned (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigSigned: test multiplying, dividing... " ;
+  std::cout << "BigSigned: test multiplying, dividing... " << std::flush ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     const BigSigned dividend = BigSigned::randomNumber () ;
@@ -499,7 +500,7 @@ static void test_MultiplyingDividing_BigSigned (void) {
 
 static void test_LeftShift_BigSigned (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigSigned: left shift... " ;
+  std::cout << "BigSigned: left shift... " << std::flush ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     const BigSigned bigA = BigSigned::randomNumber () ;
@@ -524,7 +525,7 @@ static void test_LeftShift_BigSigned (void) {
 
 static void test_RightShift_BigSigned (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigSigned: right shift... " ;
+  std::cout << "BigSigned: right shift... " << std::flush ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     const BigSigned bigA = BigSigned::randomNumber () ;
@@ -553,7 +554,7 @@ static void test_RightShift_BigSigned (void) {
 
 static void test_MultiplyingDividing_BigSignedByChunkUInt (void) {
   set_galgas_random_seed (0) ;
-  std::cout << "BigSigned: test multiplying, dividing by ChunkUInt... " ;
+  std::cout << "BigSigned: test multiplying, dividing by ChunkUInt... " << std::flush ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     const BigSigned dividend = BigSigned::randomNumber () ;
@@ -639,7 +640,7 @@ int main (int /* argc */ , const char * /* argv */[]) {
   const uint32_t milliseconds = duration % 1000 ;
   const uint32_t seconds = (duration / 1000) % 60 ;
   const uint32_t minutes = (duration / 1000) / 60 ;
-  std::cout << "Done in " << minutes << " min " << seconds << " s " << milliseconds << " ms\n" ;
+  std::cout << "All tests done in " << minutes << " min " << seconds << " s " << milliseconds << " ms\n" ;
   return 0;
 }
 
