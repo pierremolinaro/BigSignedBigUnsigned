@@ -107,6 +107,7 @@ class ChunkSharedArray final {
       mChunkSharedArrayAllocationCount += (mChunkArray == nullptr) ;
       mChunkSharedArrayCurrentlyAllocatedCount += (mChunkArray == nullptr) ;
       mChunkArray = (ChunkUInt *) realloc (mChunkArray, sizeof (ChunkUInt) * (newChunkCapacity + 1)) ;
+      mChunkArray [0] = 0 ;
       mChunkCapacity = newChunkCapacity ;
     }
   }
