@@ -91,9 +91,7 @@ class ChunkSharedArray final {
   public: void insulateWithChunkCapacity (const size_t inChunkCapacity) {
     const size_t newChunkCapacity = std::max (mChunkCapacity, inChunkCapacity) ;
     if (!isUniquelyReferenced ()) {
-      if (mChunkArray != nullptr) {
-        mChunkArray [0] -= 1 ;
-      }
+      mChunkArray [0] -= 1 ;
       ChunkUInt * newChunkArray = new ChunkUInt [newChunkCapacity + 1] ;
       mChunkSharedArrayAllocationCount += 1 ;
       mChunkSharedArrayCurrentlyAllocatedCount += 1 ;
@@ -104,11 +102,17 @@ class ChunkSharedArray final {
       mChunkArray = newChunkArray ;
       mChunkCapacity = newChunkCapacity ;
     }else if (mChunkCapacity < newChunkCapacity) {
-      mChunkSharedArrayAllocationCount += (mChunkArray == nullptr) ;
-      mChunkSharedArrayCurrentlyAllocatedCount += (mChunkArray == nullptr) ;
-      mChunkArray = (ChunkUInt *) realloc (mChunkArray, sizeof (ChunkUInt) * (newChunkCapacity + 1)) ;
-      mChunkArray [0] = 0 ;
-      mChunkCapacity = newChunkCapacity ;
+      if (mChunkArray == nullptr) {
+        mChunkArray = new ChunkUInt [newChunkCapacity + 1] ;
+        mChunkArray [0] = 0 ; // Index 0: reference count (minus one)
+        mChunkCount = 0 ;
+        mChunkCapacity = newChunkCapacity ;
+        mChunkSharedArrayAllocationCount += 1 ;
+        mChunkSharedArrayCurrentlyAllocatedCount += 1 ;
+      }else{
+        mChunkArray = (ChunkUInt *) realloc (mChunkArray, sizeof (ChunkUInt) * (newChunkCapacity + 1)) ;
+        mChunkCapacity = newChunkCapacity ;
+      }
     }
   }
 
