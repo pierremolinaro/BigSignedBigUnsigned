@@ -5,7 +5,7 @@
 //
 //----------------------------------------------------------------------------------------
 
-#include "BigSigned.h"
+#include "BigUnsigned.h"
 #include "galgas-random.h"
 
 //----------------------------------------------------------------------------------------
@@ -33,9 +33,6 @@ static std::string timeFromStart (const clock_t inStart) {
   }
   result.append (std::to_string (milliseconds)) ;
   result.append (" ms") ;
-  result.append (" (") ;
-  result.append (std::to_string (durationInMilliseconds)) ;
-  result.append (" ms)") ;
   return result ;
 }
 
@@ -217,10 +214,10 @@ static void exhaustiveCheckUpTo (const uint64_t inUpperBound) {
     bigUnsignedArray.push_back (BigUnsigned (i)) ;
   }
   exhaustiveTest_decimalString_xString_BigUnsigned (bigUnsignedArray) ;
-  exhaustiveTest_and_or_complemented_BigUnsigned (bigUnsignedArray) ;
-  exhaustiveTest_xor_complemented_BigUnsigned (bigUnsignedArray) ;
   exhaustiveTest_AddingSubtractingBigUnsigned (bigUnsignedArray) ;
   exhaustiveTest_MultiplyingDividing_BigUnsigned (bigUnsignedArray) ;
+  exhaustiveTest_and_or_complemented_BigUnsigned (bigUnsignedArray) ;
+  exhaustiveTest_xor_complemented_BigUnsigned (bigUnsignedArray) ;
   std::cout << "BigUnsigned: exhautive test [0, " << (inUpperBound - 1)
             << "] done in " << timeFromStart (start) << "\n" ;
 }

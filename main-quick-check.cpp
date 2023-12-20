@@ -37,9 +37,6 @@ static std::string timeFromStart (const clock_t inStart) {
   }
   result.append (std::to_string (milliseconds)) ;
   result.append (" ms") ;
-  result.append (" (") ;
-  result.append (std::to_string (durationInMilliseconds)) ;
-  result.append (" ms)") ;
   return result ;
 }
 

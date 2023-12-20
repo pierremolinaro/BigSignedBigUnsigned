@@ -47,3 +47,12 @@ main-demo-64-bits-chunks-release
 main-demo-8-bits-chunks-debug
 main-demo-8-bits-chunks-release
 main-exhaustive-check-8-bits-chunks-debug
+pathological-case of-naive-division-16-bits-chunks-debug
+pathological-case of-naive-division-16-bits-chunks-release
+pathological-case of-naive-division-32-bits-chunks-debug
+pathological-case of-naive-division-32-bits-chunks-release
+pathological-case of-naive-division-64-bits-chunks-debug
+pathological-case of-naive-division-64-bits-chunks-release
+pathological-case of-naive-division-8-bits-chunks-debug
+pathological-case of-naive-division-8-bits-chunks-release
+main-exhaustive-check-16-bits-chunks-debug
