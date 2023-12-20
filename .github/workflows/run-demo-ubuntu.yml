@@ -3,7 +3,7 @@ name: "RunDemoUbuntu"
 
 on:
   push:
-    branches: [ "unused" ]
+    branches: [ "master" ]
 
 jobs:
   analyze:
@@ -19,4 +19,4 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - run: ./+run-demo.py
+    - run: ./+compile-only-all-quick-checks.py
