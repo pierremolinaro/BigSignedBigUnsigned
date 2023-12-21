@@ -11,13 +11,13 @@
 //----------------------------------------------------------------------------------------
 
 static std::string timeFromStart (const clock_t inStart) {
-  const unsigned durationInMilliseconds = unsigned (::clock () - inStart) / (CLOCKS_PER_SEC / 1000) ;
-  const unsigned milliseconds = durationInMilliseconds % 1000 ;
-  const unsigned durationInSeconds = durationInMilliseconds / 1000 ;
-  const unsigned seconds = durationInSeconds % 60 ;
-  const unsigned durationInMinutes = durationInSeconds / 60 ;
-  const unsigned minutes = durationInMinutes % 60 ;
-  const unsigned hours = durationInMinutes / 60 ;
+  const uint64_t durationInMilliseconds = uint64_t (::clock () - inStart) / (CLOCKS_PER_SEC / 1000) ;
+  const uint64_t milliseconds = durationInMilliseconds % 1000 ;
+  const uint64_t durationInSeconds = durationInMilliseconds / 1000 ;
+  const uint64_t seconds = durationInSeconds % 60 ;
+  const uint64_t durationInMinutes = durationInSeconds / 60 ;
+  const uint64_t minutes = durationInMinutes % 60 ;
+  const uint64_t hours = durationInMinutes / 60 ;
   std::string result ;
   if (hours > 0) {
     result.append (std::to_string (hours)) ;
