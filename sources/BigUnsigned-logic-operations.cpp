@@ -108,7 +108,7 @@ BigUnsigned BigUnsigned::subtractedOneAndComplemented (const size_t inChunkCount
 //--------------------------------------------------------------------------------------------------
 
 BigUnsigned BigUnsigned::utilityForNegativeOrNegative (const BigUnsigned & inOperand) const {
-//  return ((*this - 1) & (inOperand - 1)) + 1 ;
+// Operation performed by this code:  return ((*this - 1) & (inOperand - 1)) + 1 ;
   const size_t minChunkCount = std::min (chunkCount(), inOperand.chunkCount()) ;
   BigUnsigned result ;
   result.mSharedArray.insulateWithChunkCapacity (minChunkCount + 1) ;
@@ -138,7 +138,7 @@ BigUnsigned BigUnsigned::utilityForNegativeOrNegative (const BigUnsigned & inOpe
 //--------------------------------------------------------------------------------------------------
 
 BigUnsigned BigUnsigned::utilityForNegativeAndNegative (const BigUnsigned & inOperand) const {
-//  return ((*this - 1) | (inOperand - 1)) + 1 ;
+// Operation performed by this code: ((*this - 1) | (inOperand - 1)) + 1 ;
   const size_t maxChunkCount = std::max (chunkCount(), inOperand.chunkCount()) ;
   BigUnsigned result ;
   result.mSharedArray.insulateWithChunkCapacity (maxChunkCount + 1) ;
@@ -185,7 +185,7 @@ BigUnsigned BigUnsigned::utilityForNegativeAndNegative (const BigUnsigned & inOp
 //--------------------------------------------------------------------------------------------------
 
 BigUnsigned BigUnsigned::utilityForPositiveAndNegative (const BigUnsigned & inNegative) const {
-//  return *this & inNegative.subtractedOneAndComplemented (chunkCount()) ;
+// Operation performed by this code: *this & inNegative.subtractedOneAndComplemented (chunkCount()) ;
   const size_t maxChunkCount = std::max (chunkCount(), inNegative.chunkCount()) ;
   BigUnsigned result ;
   result.mSharedArray.insulateWithChunkCapacity (maxChunkCount) ;
@@ -214,7 +214,7 @@ BigUnsigned BigUnsigned::utilityForPositiveAndNegative (const BigUnsigned & inNe
 //--------------------------------------------------------------------------------------------------
 
 BigUnsigned BigUnsigned::utilityForPositiveOrNegative (const BigUnsigned & inNegative) const {
-//  return (complemented (inNegative.chunkCount ()) & (inNegative - 1)) + 1 ;
+// Operation performed by this code: (complemented (inNegative.chunkCount ()) & (inNegative - 1)) + 1 ;
   const size_t maxChunkCount = std::max (chunkCount(), inNegative.chunkCount()) ;
   BigUnsigned result ;
   result.mSharedArray.insulateWithChunkCapacity (maxChunkCount + 1) ;
@@ -231,7 +231,6 @@ BigUnsigned BigUnsigned::utilityForPositiveOrNegative (const BigUnsigned & inNeg
     carry = v < carry ;
     result.mSharedArray.appendChunk (v COMMA_HERE) ;
   }
-//  macroAssert (carry >= borrow, "carry, borrow error", 0, 0) ;
   for (size_t i = minChunkCount + 1 ; i <= inNegative.chunkCount() ; i++) {
     const ChunkUInt negative = inNegative.mSharedArray.chunkAtIndex (i COMMA_HERE) ;
     const ChunkUInt n = negative - borrow ;
@@ -247,7 +246,7 @@ BigUnsigned BigUnsigned::utilityForPositiveOrNegative (const BigUnsigned & inNeg
 //--------------------------------------------------------------------------------------------------
 
 BigUnsigned BigUnsigned::utilityForNegativeXorNegative (const BigUnsigned & inOperand) const {
-//  return (*this - 1) ^ (inOperand - 1) ;
+// Operation performed by this code: (*this - 1) ^ (inOperand - 1) ;
   const size_t maxChunkCount = std::max (chunkCount(), inOperand.chunkCount()) ;
   BigUnsigned result ;
   result.mSharedArray.insulateWithChunkCapacity (maxChunkCount) ;
@@ -284,8 +283,8 @@ BigUnsigned BigUnsigned::utilityForNegativeXorNegative (const BigUnsigned & inOp
 //--------------------------------------------------------------------------------------------------
 
 BigUnsigned BigUnsigned::utilityForPositiveXorNegative (const BigUnsigned & inNegative) const {
-//  const BigUnsigned r = *this ^ inNegative.subtractedOneAndComplemented (chunkCount ()) ;
-//  return r.complemented (r.chunkCount ()) + 1 ;
+// Operation performed by this code: const BigUnsigned r = *this ^ inNegative.subtractedOneAndComplemented (chunkCount ()) ;
+//                     then returns: r.complemented (r.chunkCount ()) + 1 ;
   const size_t maxChunkCount = std::max (chunkCount(), inNegative.chunkCount()) ;
   BigUnsigned result ;
   result.mSharedArray.insulateWithChunkCapacity (maxChunkCount + 1) ;
