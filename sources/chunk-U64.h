@@ -8,7 +8,6 @@
 //--------------------------------------------------------------------------------------------------
 
 typedef uint64_t ChunkUInt ;
-static const size_t ChunkUIntBitCount = 64 ;
 static const ChunkUInt ChunkUIntMax = UINT64_MAX ;
 
 //--------------------------------------------------------------------------------------------------
@@ -16,8 +15,8 @@ static const ChunkUInt ChunkUIntMax = UINT64_MAX ;
 static const ChunkUInt greatestPowerOf10 = 1'000'000'000'000'000'000 ; // 10**18
 static const size_t greatestPowerOf10DigitCount = 18 ;
 
-#define ChunkUIntDecimalFormatSpecifierWithLeadingZeros "%018" PRIu64
-#define ChunkUIntHexFormatSpecifierWithLeadingZeros "%018" PRIX64
+static const char * ChunkUIntDecimalFormatSpecifierWithLeadingZeros = "%018" PRIu64 ;
+static const char * ChunkUIntHexFormatSpecifierWithLeadingZeros = "%018" PRIX64 ;
 
 inline uint32_t countLeadingZeros (const ChunkUInt inValue) {
   return uint32_t (__builtin_clzll (inValue)) ;

@@ -8,7 +8,6 @@
 //--------------------------------------------------------------------------------------------------
 
 typedef uint32_t ChunkUInt ;
-static const size_t ChunkUIntBitCount = 32 ;
 static const ChunkUInt ChunkUIntMax = UINT32_MAX ;
 
 //--------------------------------------------------------------------------------------------------
@@ -16,8 +15,8 @@ static const ChunkUInt ChunkUIntMax = UINT32_MAX ;
 static const ChunkUInt greatestPowerOf10 = 1'000'000'000 ; // 10**9
 static const size_t greatestPowerOf10DigitCount = 9 ;
 
-#define ChunkUIntDecimalFormatSpecifierWithLeadingZeros "%09" PRIu32
-#define ChunkUIntHexFormatSpecifierWithLeadingZeros "%09" PRIX32
+static const char * ChunkUIntDecimalFormatSpecifierWithLeadingZeros = "%09" PRIu32 ;
+static const char * ChunkUIntHexFormatSpecifierWithLeadingZeros = "%09" PRIX32 ;
 
 //--------------------------------------------------------------------------------------------------
 
