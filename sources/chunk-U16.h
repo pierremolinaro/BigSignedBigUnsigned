@@ -15,8 +15,8 @@ static const ChunkUInt ChunkUIntMax = UINT16_MAX ;
 static const ChunkUInt greatestPowerOf10 = 10'000 ; // 10**4
 static const size_t greatestPowerOf10DigitCount = 4 ;
 
-static const char * ChunkUIntDecimalFormatSpecifierWithLeadingZeros = "%04" PRIu16 ;
-static const char * ChunkUIntHexFormatSpecifierWithLeadingZeros = "%04" PRIX16 ;
+static const char * ChunkUIntDecimalFormatSpecifierWithLeadingZeros __attribute__ ((unused)) = "%04" PRIu16 ;
+static const char * ChunkUIntHexFormatSpecifierWithLeadingZeros __attribute__ ((unused)) = "%04" PRIX16 ;
 
 //--------------------------------------------------------------------------------------------------
 
