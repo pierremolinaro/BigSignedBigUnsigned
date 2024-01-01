@@ -35,7 +35,7 @@ std::string BigUnsigned::decimalString (void) const {
     result.append (std::to_string (decimalValueArray [n - 1])) ;
     for (size_t i = n - 1 ; i > 0 ; i--) {
       char s [32] ;
-      snprintf (s, 31, ChunkUIntDecimalFormatSpecifierWithLeadingZeros, decimalValueArray [i-1]) ;
+      snprintf (s, 31, ChunkUIntDecimalFormatSpecifierWithLeadingZeros (), decimalValueArray [i-1]) ;
       result.append (s) ;
     }
   }
@@ -79,7 +79,7 @@ std::string BigUnsigned::hexString (void) const {
     snprintf (s, 31, "%" PRIX64, u64AtIndex (u64Count () - 1)) ;
     result.append (s) ;
     for (size_t i = u64Count () - 1 ; i > 0 ; i--) {
-      snprintf (s, 31, ChunkUIntHexFormatSpecifierWithLeadingZeros, mSharedArray.chunkAtIndex (i COMMA_HERE)) ;
+      snprintf (s, 32, "%018" PRIX64, u64AtIndex (i - 1)) ;
       result.append (s) ;
     }
   }
