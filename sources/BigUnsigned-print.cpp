@@ -33,9 +33,10 @@ std::string BigUnsigned::decimalString (void) const {
     }
     const size_t n = decimalValueArray.size () ;
     result.append (std::to_string (decimalValueArray [n - 1])) ;
+    char s [32] ;
     for (size_t i = n - 1 ; i > 0 ; i--) {
-      char s [32] ;
-      snprintf (s, 31, ChunkUIntDecimalFormatSpecifierWithLeadingZeros (), decimalValueArray [i-1]) ;
+      const uint64_t v = decimalValueArray [i-1] ;
+      snprintf (s, 32, "%0*" PRIu64, int (greatestPowerOf10DigitCount), v) ;
       result.append (s) ;
     }
   }
