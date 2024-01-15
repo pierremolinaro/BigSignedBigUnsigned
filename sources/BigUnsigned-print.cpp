@@ -80,7 +80,7 @@ std::string BigUnsigned::hexString (void) const {
     snprintf (s, 31, "%" PRIX64, u64AtIndex (u64Count () - 1)) ;
     result.append (s) ;
     for (size_t i = u64Count () - 1 ; i > 0 ; i--) {
-      snprintf (s, 32, "%018" PRIX64, u64AtIndex (i - 1)) ;
+      snprintf (s, 32, "%016" PRIX64, u64AtIndex (i - 1)) ;
       result.append (s) ;
     }
   }
