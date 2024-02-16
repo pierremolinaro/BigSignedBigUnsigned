@@ -231,8 +231,6 @@ BigUnsigned BigUnsigned::utilityForPositiveOrNegative (const BigUnsigned & inNeg
     ChunkUInt newBorrow = 0 ;
     subtractReportingOverflow (n, borrow, newBorrow) ;
     borrow = newBorrow ;
-//    const ChunkUInt n = negative - borrow ;
-//    borrow = negative < borrow ;
     const ChunkUInt andResult = positiveComplemented & n ;
     const ChunkUInt v = andResult + carry ;
     carry = v < carry ;

@@ -57,7 +57,7 @@ def runCommand (command) :
 #------------------------------------------------------------------------------
 
 def invocationList () :
-  result = ["g++", "-std=c++14", "-O3"]
+  result = ["g++", "-std=c++14", "-g"]
   result.append ("-Isources")
   result.append ("sources/BigUnsigned-add.cpp")
   result.append ("sources/BigUnsigned-bit.cpp")
