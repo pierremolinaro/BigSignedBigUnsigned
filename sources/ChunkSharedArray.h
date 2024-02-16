@@ -30,7 +30,7 @@ class ChunkSharedArray final {
   mChunkArray (nullptr),
   mChunkCount (0),
   mChunkCapacity (0) {
-    mChunkArray = new ChunkUInt [inChunkCapacity + 1] ;
+    mChunkArray = (ChunkUInt *) malloc (sizeof (ChunkUInt) * (inChunkCapacity + 1)) ; ;
     mChunkSharedArrayAllocationCount += 1 ;
     mChunkSharedArrayCurrentlyAllocatedCount += 1 ;
     mChunkArray [0] = 0 ; // Index 0: reference count (minus one)
@@ -41,7 +41,7 @@ class ChunkSharedArray final {
   public: ~ChunkSharedArray (void)  {
     if (mChunkArray != nullptr) {
       if (mChunkArray [0] == 0) {
-        delete [] mChunkArray ;
+        free (mChunkArray) ;
         macroAssert (mChunkSharedArrayCurrentlyAllocatedCount > 0, "Zero!", 0, 0) ;
         mChunkSharedArrayCurrentlyAllocatedCount -= 1 ;
       }else{
