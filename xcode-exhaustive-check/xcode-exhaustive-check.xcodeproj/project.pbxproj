@@ -17,7 +17,6 @@
 		CF598B752B32044A0005B4C2 /* BigUnsigned-utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B512B32044A0005B4C2 /* BigUnsigned-utilities.cpp */; };
 		CF598B762B32044A0005B4C2 /* BigUnsigned-logic-operations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B522B32044A0005B4C2 /* BigUnsigned-logic-operations.cpp */; };
 		CF598B772B32044A0005B4C2 /* BigUnsigned-shifts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B532B32044A0005B4C2 /* BigUnsigned-shifts.cpp */; };
-		CF598B782B32044A0005B4C2 /* MF_Assert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B542B32044A0005B4C2 /* MF_Assert.cpp */; };
 		CF598B792B32044A0005B4C2 /* BigSigned-utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B562B32044A0005B4C2 /* BigSigned-utilities.cpp */; };
 		CF598B7A2B32044A0005B4C2 /* BigUnsigned-constructors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B572B32044A0005B4C2 /* BigUnsigned-constructors.cpp */; };
 		CF598B7B2B32044A0005B4C2 /* BigUnsigned-chunk-operations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF598B582B32044A0005B4C2 /* BigUnsigned-chunk-operations.cpp */; };
@@ -64,11 +63,9 @@
 		CF598B4D2B32044A0005B4C2 /* BigUnsigned-divide.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-divide.cpp"; path = "../../sources/BigUnsigned-divide.cpp"; sourceTree = "<group>"; };
 		CF598B4E2B32044A0005B4C2 /* chunk-U8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "chunk-U8.h"; path = "../../sources/chunk-U8.h"; sourceTree = "<group>"; };
 		CF598B4F2B32044A0005B4C2 /* BigUnsigned-bit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-bit.cpp"; path = "../../sources/BigUnsigned-bit.cpp"; sourceTree = "<group>"; };
-		CF598B502B32044A0005B4C2 /* MF_Assert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MF_Assert.h; path = ../../sources/MF_Assert.h; sourceTree = "<group>"; };
 		CF598B512B32044A0005B4C2 /* BigUnsigned-utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-utilities.cpp"; path = "../../sources/BigUnsigned-utilities.cpp"; sourceTree = "<group>"; };
 		CF598B522B32044A0005B4C2 /* BigUnsigned-logic-operations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-logic-operations.cpp"; path = "../../sources/BigUnsigned-logic-operations.cpp"; sourceTree = "<group>"; };
 		CF598B532B32044A0005B4C2 /* BigUnsigned-shifts.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-shifts.cpp"; path = "../../sources/BigUnsigned-shifts.cpp"; sourceTree = "<group>"; };
-		CF598B542B32044A0005B4C2 /* MF_Assert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MF_Assert.cpp; path = ../../sources/MF_Assert.cpp; sourceTree = "<group>"; };
 		CF598B552B32044A0005B4C2 /* BigUnsigned.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BigUnsigned.h; path = ../../sources/BigUnsigned.h; sourceTree = "<group>"; };
 		CF598B562B32044A0005B4C2 /* BigSigned-utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigSigned-utilities.cpp"; path = "../../sources/BigSigned-utilities.cpp"; sourceTree = "<group>"; };
 		CF598B572B32044A0005B4C2 /* BigUnsigned-constructors.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "BigUnsigned-constructors.cpp"; path = "../../sources/BigUnsigned-constructors.cpp"; sourceTree = "<group>"; };
@@ -166,8 +163,6 @@
 				CF598B662B32044A0005B4C2 /* galgas-random.h */,
 				CF598B482B32044A0005B4C2 /* M_machine.h */,
 				CF598B4A2B32044A0005B4C2 /* M_SourceLocation.h */,
-				CF598B542B32044A0005B4C2 /* MF_Assert.cpp */,
-				CF598B502B32044A0005B4C2 /* MF_Assert.h */,
 				CF598B442B32043A0005B4C2 /* main-exhaustive-check.cpp */,
 			);
 			path = "xcode-exhaustive-check";
@@ -200,7 +195,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					CF598B392B3204260005B4C2 = {
 						CreatedOnToolsVersion = 15.1;
@@ -237,7 +232,6 @@
 				CF598B802B32044A0005B4C2 /* BigSigned-print.cpp in Sources */,
 				CF598B822B32044A0005B4C2 /* BigSigned-add.cpp in Sources */,
 				CF598B702B32044A0005B4C2 /* BigSigned-chunk-operations.cpp in Sources */,
-				CF598B782B32044A0005B4C2 /* MF_Assert.cpp in Sources */,
 				CF598B7E2B32044A0005B4C2 /* BigSigned-shifts.cpp in Sources */,
 				CF598B8A2B32044A0005B4C2 /* BigSigned-bit.cpp in Sources */,
 				CF598B712B32044A0005B4C2 /* BigSigned-constructors.cpp in Sources */,
@@ -277,6 +271,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_INTEGER = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -300,6 +295,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -338,6 +334,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_INTEGER = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -361,6 +358,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -384,9 +382,16 @@
 		CF598B422B3204260005B4C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_INTEGER = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = YW8QY74J2A;
 				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					USE_8_BITS_CHUNKS,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -394,10 +399,15 @@
 		CF598B432B3204260005B4C2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_INTEGER = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = YW8QY74J2A;
 				ENABLE_HARDENED_RUNTIME = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = DO_NOT_GENERATE_CHECKINGS;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					DO_NOT_GENERATE_CHECKINGS,
+					USE_8_BITS_CHUNKS,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

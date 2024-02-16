@@ -194,7 +194,8 @@ class ChunkSharedArray final {
     #ifndef DO_NOT_GENERATE_CHECKINGS
       checkChunkIndex (inChunkIndex COMMA_THERE) ;
     #endif
-    mChunkArray [inChunkIndex] -= inChunkValue ; // 1-Based Indexing
+    subtractIgnoringOverflow (mChunkArray [inChunkIndex], inChunkValue) ; // 1-Based Indexing
+//    mChunkArray [inChunkIndex] -= inChunkValue ; // 1-Based Indexing
   }
 
 //--- Index checking

@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-
+#
+#------------------------------------------------------------------------------
+# https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html
 #------------------------------------------------------------------------------
 
 import os
@@ -32,6 +34,10 @@ def BOLD_BLUE () :
 #------------------------------------------------------------------------------
 
 def runCommand (command) :
+  s = "+"
+  for cmd in command:
+    s += " " + cmd
+  print (BOLD_BLUE () + s + ENDC ())
   childProcess = subprocess.Popen (command)
   childProcess.wait ()
   if childProcess.returncode != 0 :
@@ -41,7 +47,7 @@ def runCommand (command) :
 #------------------------------------------------------------------------------
 
 def invocationList () :
-  result = ["g++", "-std=c++14", "-O2"]
+  result = ["g++", "-std=c++14", "-O3"]
   result.append ("-Isources")
   result.append ("sources/BigSigned-add.cpp")
   result.append ("sources/BigSigned-bit.cpp")
@@ -84,6 +90,8 @@ print (BOLD_BLUE () + "8 bits chunk, debug mode" + ENDC ())
 print ("Compiling...") ;
 runCommand (invocationList () + [
   "main-quick-check.cpp",
+  "-fsanitize=undefined",
+  "-fsanitize=address",
   "-DUSE_8_BITS_CHUNKS",
   "-o", "main-quick-check-8-bits-chunks-debug"
 ])
@@ -103,6 +111,8 @@ print (BOLD_BLUE () + "16 bits chunk, debug mode" + ENDC ())
 print ("Compiling...") ;
 runCommand (invocationList () + [
   "main-quick-check.cpp",
+  "-fsanitize=undefined",
+  "-fsanitize=address",
   "-DUSE_16_BITS_CHUNKS",
   "-o", "main-quick-check-16-bits-chunks-debug"
 ])
@@ -122,6 +132,8 @@ print (BOLD_BLUE () + "32 bits chunk, debug mode" + ENDC ())
 print ("Compiling...") ;
 runCommand (invocationList () + [
   "main-quick-check.cpp",
+  "-fsanitize=undefined",
+  "-fsanitize=address",
   "-DUSE_32_BITS_CHUNKS",
   "-o", "main-quick-check-32-bits-chunks-debug"
 ])
@@ -141,6 +153,8 @@ print (BOLD_BLUE () + "64 bits chunk, debug mode" + ENDC ())
 print ("Compiling...") ;
 runCommand (invocationList () + [
   "main-quick-check.cpp",
+  "-fsanitize=undefined",
+  "-fsanitize=address",
   "-o", "main-quick-check-64-bits-chunks-debug"
 ])
 runCommand (["./main-quick-check-64-bits-chunks-debug"])

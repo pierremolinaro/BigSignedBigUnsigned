@@ -21,9 +21,13 @@ BigUnsigned BigUnsigned::operator + (const ChunkUInt inOperand) const {
     result.mSharedArray.insulateWithChunkCapacity (n + 1) ;
     ChunkUInt carry = inOperand ;
     for (size_t i = 1 ; i <= mSharedArray.chunkCount () ; i++) {
-      const ChunkUInt sum = mSharedArray.chunkAtIndex (i COMMA_HERE) + carry ;
+      ChunkUInt newCarry = 0 ;
+      ChunkUInt sum = mSharedArray.chunkAtIndex (i COMMA_HERE) ;
+      addReportingOverflow (sum, carry, newCarry) ;
+      carry = newCarry ;
+//      const ChunkUInt sum = mSharedArray.chunkAtIndex (i COMMA_HERE) + carry ;
+//      carry = sum < carry ;
       result.mSharedArray.appendChunk (sum COMMA_HERE) ;
-      carry = sum < carry ;
     }
     if (carry != 0) {
       result.mSharedArray.appendChunk (carry COMMA_HERE) ;
@@ -110,8 +114,9 @@ void BigUnsigned::operator *= (const ChunkUInt inOperand) {
       ChunkUInt low ;
       baseMultiplication (mSharedArray.chunkAtIndex (i COMMA_HERE), inOperand, high, low) ;
     //--- Add carry
-      low += carry ;
-      high += (low < carry) ;
+      addReportingOverflow (low, carry, high) ;
+//      low += carry ;
+//      high += (low < carry) ;
     //--- Store result
       mSharedArray.setChunkAtIndex (low, i COMMA_HERE) ;
       carry = high ;

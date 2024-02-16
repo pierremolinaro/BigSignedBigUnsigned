@@ -76,7 +76,7 @@ BigUnsigned BigUnsigned::complemented (const size_t inChunkCount) const {
   BigUnsigned result ;
   result.mSharedArray.insulateWithChunkCapacity (std::max (chunkCount (), inChunkCount)) ;
   for (size_t i = 1 ; i <= chunkCount () ; i++) {
-    const ChunkUInt v = ~ mSharedArray.chunkAtIndex (i COMMA_HERE) ;
+    const ChunkUInt v = ChunkUInt (~ mSharedArray.chunkAtIndex (i COMMA_HERE)) ;
     result.mSharedArray.appendChunk (v COMMA_HERE) ;
   }
   for (size_t i = chunkCount () + 1 ; i <= inChunkCount ; i++) {
@@ -153,8 +153,12 @@ BigUnsigned BigUnsigned::utilityForNegativeAndNegative (const BigUnsigned & inOp
     const ChunkUInt operandValue = inOperand.mSharedArray.chunkAtIndex (i COMMA_HERE) ;
     const ChunkUInt rightValue = operandValue - operandBorrow ;
     operandBorrow = operandValue < operandBorrow ;
-    const ChunkUInt r = (leftValue | rightValue) + carry ;
-    carry = r < carry ;
+    ChunkUInt r = (leftValue | rightValue) ;
+    ChunkUInt newCarry = 0 ;
+    addReportingOverflow (r, carry, newCarry) ;
+    carry = newCarry ;
+//    const ChunkUInt r = (leftValue | rightValue) + carry ;
+//    carry = r < carry ;
     result.mSharedArray.appendChunk (r COMMA_HERE) ;
   }
   for (size_t i = minChunkCount + 1 ; i <= chunkCount() ; i++) {
@@ -222,10 +226,13 @@ BigUnsigned BigUnsigned::utilityForPositiveOrNegative (const BigUnsigned & inNeg
   ChunkUInt borrow = 1 ; // 0 or 1
   const size_t minChunkCount = std::min (chunkCount(), inNegative.chunkCount()) ;
   for (size_t i = 1 ; i <= minChunkCount ; i++) {
-    const ChunkUInt positiveComplemented = ~ mSharedArray.chunkAtIndex (i COMMA_HERE) ;
-    const ChunkUInt negative = inNegative.mSharedArray.chunkAtIndex (i COMMA_HERE) ;
-    const ChunkUInt n = negative - borrow ;
-    borrow = negative < borrow ;
+    const ChunkUInt positiveComplemented = ChunkUInt (~ mSharedArray.chunkAtIndex (i COMMA_HERE)) ;
+    ChunkUInt n = inNegative.mSharedArray.chunkAtIndex (i COMMA_HERE) ;
+    ChunkUInt newBorrow = 0 ;
+    subtractReportingOverflow (n, borrow, newBorrow) ;
+    borrow = newBorrow ;
+//    const ChunkUInt n = negative - borrow ;
+//    borrow = negative < borrow ;
     const ChunkUInt andResult = positiveComplemented & n ;
     const ChunkUInt v = andResult + carry ;
     carry = v < carry ;
