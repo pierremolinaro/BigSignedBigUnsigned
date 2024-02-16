@@ -90,20 +90,20 @@ runCommand (invocationList () + [
   "-fsanitize=undefined",
   "-fsanitize=address",
   "-DUSE_8_BITS_CHUNKS",
-  "-o", "main-demo-8-bits-chunks-debug"
+  "-o", "z-main-demo-8-bits-chunks-debug"
 ])
 print ("", flush=True)
-runCommand (["./main-demo-8-bits-chunks-debug"])
+runCommand (["./z-main-demo-8-bits-chunks-debug"])
 
 print (BOLD_BLUE () + "8 bits chunk, release mode" + ENDC ())
 print ("Compiling...") ;
 runCommand (invocationList () + [
   "main-demo.cpp",
   "-DDO_NOT_GENERATE_CHECKINGS",
-  "-o", "main-demo-8-bits-chunks-release"
+  "-o", "z-main-demo-8-bits-chunks-release"
 ])
 print ("", flush=True)
-runCommand (["./main-demo-8-bits-chunks-release"])
+runCommand (["./z-main-demo-8-bits-chunks-release"])
 
 #--- Build and run (16 bits chunks)
 print (BOLD_BLUE () + "16 bits chunk, debug mode" + ENDC ())
@@ -113,10 +113,10 @@ runCommand (invocationList () + [
   "-fsanitize=undefined",
   "-fsanitize=address",
   "-DUSE_16_BITS_CHUNKS",
-  "-o", "main-demo-16-bits-chunks-debug"
+  "-o", "z-main-demo-16-bits-chunks-debug"
 ])
 print ("", flush=True)
-runCommand (["./main-demo-16-bits-chunks-debug"])
+runCommand (["./z-main-demo-16-bits-chunks-debug"])
 
 print (BOLD_BLUE () + "16 bits chunk, release mode" + ENDC ())
 print ("Compiling...") ;
@@ -124,10 +124,10 @@ runCommand (invocationList () + [
   "main-demo.cpp",
   "-DUSE_16_BITS_CHUNKS",
   "-DDO_NOT_GENERATE_CHECKINGS",
-  "-o", "main-demo-16-bits-chunks-release"
+  "-o", "z-main-demo-16-bits-chunks-release"
 ])
 print ("", flush=True)
-runCommand (["./main-demo-16-bits-chunks-release"])
+runCommand (["./z-main-demo-16-bits-chunks-release"])
 
 #--- Build and run (32 bits chunks)
 print (BOLD_BLUE () + "32 bits chunk, debug mode" + ENDC ())
@@ -137,10 +137,10 @@ runCommand (invocationList () + [
   "-fsanitize=undefined",
   "-fsanitize=address",
   "-DUSE_32_BITS_CHUNKS",
-  "-o", "main-demo-32-bits-chunks-debug"
+  "-o", "z-main-demo-32-bits-chunks-debug"
 ])
 print ("", flush=True)
-runCommand (["./main-demo-32-bits-chunks-debug"])
+runCommand (["./z-main-demo-32-bits-chunks-debug"])
 
 print (BOLD_BLUE () + "32 bits chunk, release mode" + ENDC ())
 print ("Compiling...") ;
@@ -148,10 +148,10 @@ runCommand (invocationList () + [
   "main-demo.cpp",
   "-DUSE_32_BITS_CHUNKS",
   "-DDO_NOT_GENERATE_CHECKINGS",
-  "-o", "main-demo-32-bits-chunks-release"
+  "-o", "z-main-demo-32-bits-chunks-release"
 ])
 print ("", flush=True)
-runCommand (["./main-demo-32-bits-chunks-release"])
+runCommand (["./z-main-demo-32-bits-chunks-release"])
 
 #--- Build and run (64 bits chunks)
 print (BOLD_BLUE () + "64 bits chunk, debug mode" + ENDC ())
@@ -161,19 +161,19 @@ runCommand (invocationList () + [
   "main-demo.cpp",
   "-fsanitize=undefined",
   "-fsanitize=address",
-  "-o", "main-demo-64-bits-chunks-debug"
+  "-o", "z-main-demo-64-bits-chunks-debug"
 ])
 print ("", flush=True)
-runCommand (["./main-demo-64-bits-chunks-debug"])
+runCommand (["./z-main-demo-64-bits-chunks-debug"])
 print (BOLD_BLUE () + "64 bits chunk, release mode" + ENDC ())
 
 print ("Compiling...") ;
 runCommand (invocationList () + [
   "main-demo.cpp",
   "-DDO_NOT_GENERATE_CHECKINGS",
-  "-o", "main-demo-64-bits-chunks-release"
+  "-o", "z-main-demo-64-bits-chunks-release"
 ])
 print ("", flush=True)
-runCommand (["./main-demo-64-bits-chunks-release"])
+runCommand (["./z-main-demo-64-bits-chunks-release"])
 
 #------------------------------------------------------------------------------

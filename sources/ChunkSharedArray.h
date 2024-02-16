@@ -68,7 +68,8 @@ class ChunkSharedArray final {
   //--- Release
     if (mChunkArray != nullptr) {
       if (mChunkArray [0] == 0) {
-        delete [] mChunkArray ;
+        free (mChunkArray) ;
+        mChunkArray = nullptr ;
         macroAssert (mChunkSharedArrayCurrentlyAllocatedCount > 0, "Zero!", 0, 0) ;
         mChunkSharedArrayCurrentlyAllocatedCount -= 1 ;
       }else{
@@ -96,7 +97,7 @@ class ChunkSharedArray final {
     const size_t newChunkCapacity = std::max (mChunkCapacity, inChunkCapacity) ;
     if (!isUniquelyReferenced ()) {
       mChunkArray [0] -= 1 ;
-      ChunkUInt * newChunkArray = new ChunkUInt [newChunkCapacity + 1] ;
+      ChunkUInt * newChunkArray = (ChunkUInt *) malloc (sizeof (ChunkUInt) * (newChunkCapacity + 1)) ;
       mChunkSharedArrayAllocationCount += 1 ;
       mChunkSharedArrayCurrentlyAllocatedCount += 1 ;
       newChunkArray [0] = 0 ; // Index 0: reference count (minus one)
@@ -107,7 +108,7 @@ class ChunkSharedArray final {
       mChunkCapacity = newChunkCapacity ;
     }else if (mChunkCapacity < newChunkCapacity) {
       if (mChunkArray == nullptr) {
-        mChunkArray = new ChunkUInt [newChunkCapacity + 1] ;
+        mChunkArray = (ChunkUInt *) malloc (sizeof (ChunkUInt) * (newChunkCapacity + 1)) ;
         mChunkArray [0] = 0 ; // Index 0: reference count (minus one)
         mChunkCount = 0 ;
         mChunkCapacity = newChunkCapacity ;

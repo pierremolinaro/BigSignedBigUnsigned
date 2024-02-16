@@ -87,18 +87,18 @@ print ("Compiling...") ;
 runCommand (invocationList () + [
   "pathological-case of-naive-division.cpp",
   "-DUSE_8_BITS_CHUNKS",
-  "-o", "pathological-case of-naive-division-8-bits-chunks-debug"
+  "-o", "z-pathological-case of-naive-division-8-bits-chunks-debug"
 ])
-runCommand (["./pathological-case of-naive-division-8-bits-chunks-debug"])
+runCommand (["./z-pathological-case of-naive-division-8-bits-chunks-debug"])
 # print (BOLD_BLUE () + "8 bits chunk, release mode" + ENDC ())
 # print ("Compiling...") ;
 # runCommand (invocationList () + [
 #   "pathological-case of-naive-division.cpp",
 #   "-DUSE_8_BITS_CHUNKS",
 #   "-DDO_NOT_GENERATE_CHECKINGS",
-#   "-o", "pathological-case of-naive-division-8-bits-chunks-release"
+#   "-o", "z-pathological-case of-naive-division-8-bits-chunks-release"
 # ])
-# runCommand (["./pathological-case of-naive-division-8-bits-chunks-release"])
+# runCommand (["./z-pathological-case of-naive-division-8-bits-chunks-release"])
 
 #--- Build and run (16 bits chunks)
 print (BOLD_BLUE () + "16 bits chunk, debug mode" + ENDC ())
@@ -106,18 +106,18 @@ print ("Compiling...") ;
 runCommand (invocationList () + [
   "pathological-case of-naive-division.cpp",
   "-DUSE_16_BITS_CHUNKS",
-  "-o", "pathological-case of-naive-division-16-bits-chunks-debug"
+  "-o", "z-pathological-case of-naive-division-16-bits-chunks-debug"
 ])
-runCommand (["./pathological-case of-naive-division-16-bits-chunks-debug"])
+runCommand (["./z-pathological-case of-naive-division-16-bits-chunks-debug"])
 # print (BOLD_BLUE () + "16 bits chunk, release mode" + ENDC ())
 # print ("Compiling...") ;
 # runCommand (invocationList () + [
 #   "pathological-case of-naive-division.cpp",
 #   "-DUSE_16_BITS_CHUNKS",
 #   "-DDO_NOT_GENERATE_CHECKINGS",
-#   "-o", "pathological-case of-naive-division-16-bits-chunks-release"
+#   "-o", "z-pathological-case of-naive-division-16-bits-chunks-release"
 # ])
-# runCommand (["./pathological-case of-naive-division-16-bits-chunks-release"])
+# runCommand (["./z-pathological-case of-naive-division-16-bits-chunks-release"])
 
 #--- Build and run (32 bits chunks)
 print (BOLD_BLUE () + "32 bits chunk, debug mode" + ENDC ())
@@ -125,34 +125,34 @@ print ("Compiling...") ;
 runCommand (invocationList () + [
   "pathological-case of-naive-division.cpp",
   "-DUSE_32_BITS_CHUNKS",
-  "-o", "pathological-case of-naive-division-32-bits-chunks-debug"
+  "-o", "z-pathological-case of-naive-division-32-bits-chunks-debug"
 ])
-runCommand (["./pathological-case of-naive-division-32-bits-chunks-debug"])
+runCommand (["./z-pathological-case of-naive-division-32-bits-chunks-debug"])
 # print (BOLD_BLUE () + "32 bits chunk, release mode" + ENDC ())
 # print ("Compiling...") ;
 # runCommand (invocationList () + [
 #   "pathological-case of-naive-division.cpp",
 #   "-DUSE_32_BITS_CHUNKS",
 #   "-DDO_NOT_GENERATE_CHECKINGS",
-#   "-o", "pathological-case of-naive-division-32-bits-chunks-release"
+#   "-o", "z-pathological-case of-naive-division-32-bits-chunks-release"
 # ])
-# runCommand (["./pathological-case of-naive-division-32-bits-chunks-release"])
+# runCommand (["./z-pathological-case of-naive-division-32-bits-chunks-release"])
 
 #--- Build and run (64 bits chunks)
 print (BOLD_BLUE () + "64 bits chunk, debug mode" + ENDC ())
 print ("Compiling...") ;
 runCommand (invocationList () + [
   "pathological-case of-naive-division.cpp",
-  "-o", "pathological-case of-naive-division-64-bits-chunks-debug"
+  "-o", "z-pathological-case of-naive-division-64-bits-chunks-debug"
 ])
-runCommand (["./pathological-case of-naive-division-64-bits-chunks-debug"])
+runCommand (["./z-pathological-case of-naive-division-64-bits-chunks-debug"])
 # print (BOLD_BLUE () + "64 bits chunk, release mode" + ENDC ())
 # print ("Compiling...") ;
 # runCommand (invocationList () + [
 #   "pathological-case of-naive-division.cpp",
 #   "-DDO_NOT_GENERATE_CHECKINGS",
-#   "-o", "pathological-case of-naive-division-64-bits-chunks-release"
+#   "-o", "z-pathological-case of-naive-division-64-bits-chunks-release"
 # ])
-# runCommand (["./pathological-case of-naive-division-64-bits-chunks-release"])
+# runCommand (["./z-pathological-case of-naive-division-64-bits-chunks-release"])
 
 #------------------------------------------------------------------------------
