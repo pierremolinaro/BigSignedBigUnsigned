@@ -26,12 +26,6 @@ BigUnsigned BigUnsigned::operator - (const BigUnsigned inOperand) const {
         macroAssert (newBorrow <= 1, "borrow error", 0, 0) ;
         result.mSharedArray.appendChunk (r COMMA_HERE) ;
         borrow = newBorrow ;
-
-//        const ChunkUInt r2 = r1 - borrow ; // Can underflow
-//        newBorrow += r1 < borrow ;
-//        macroAssert (newBorrow <= 1, "borrow error", 0, 0) ;
-//        result.mSharedArray.appendChunk (r2 COMMA_HERE) ;
-//        borrow = newBorrow ;
       }
       for (size_t i = inOperand.mSharedArray.chunkCount () + 1 ; i <= mSharedArray.chunkCount () ; i++) {
         const ChunkUInt left = mSharedArray.chunkAtIndex (i COMMA_HERE) ;

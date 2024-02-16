@@ -66,7 +66,7 @@ inline void subtractIgnoringOverflow (ChunkUInt & ioResult,
 //--------------------------------------------------------------------------------------------------
 
 inline ChunkUInt leftShiftIgnoringOverflow (const ChunkUInt inOperand,
-                                            const ChunkUInt inShiftCount) {
+                                            const size_t inShiftCount) {
   const ChunkUInt ChunkUIntBitCount = sizeof (ChunkUInt) * 8 ;
   ChunkUInt r = inOperand ;
   if (inShiftCount > 0) {

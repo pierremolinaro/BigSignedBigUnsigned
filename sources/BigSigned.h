@@ -30,8 +30,7 @@ class BigSigned final {
                               const BigUnsigned inValue) ;
 
   public: explicit BigSigned (const bool inPositive,
-                              const size_t inByteCount,
-                              const uint8_t inSourceByteArray []) ;
+                              const std::vector <uint8_t> & inBigEndianArray) ;
 
   public: explicit BigSigned (const std::string & inString, const uint8_t inSeparator) ;
 

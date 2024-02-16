@@ -101,18 +101,11 @@ BigUnsignedQuotientRemainder BigUnsigned::divideByBigUnsigned (const BigUnsigned
             remainder.mSharedArray.setChunkAtIndex (sum, i + quotientIndex - 1 COMMA_HERE) ;
             carry = newCarry ;
             macroAssert (carry <= 1, "Invalid carry", 0, 0) ;
-//            sum += carry ;
-//            const ChunkUInt carry2 = sum < carry ;
-//            remainder.mSharedArray.setChunkAtIndex (sum, i + quotientIndex - 1 COMMA_HERE) ;
-//            carry = carry1 + carry2 ;
-//            macroAssert (carry <= 1, "Invalid carry", 0, 0) ;
           }
           ChunkUInt lastRemainderValue = remainder.mSharedArray.chunkAtIndex (remainderLastIndex COMMA_HERE) ;
           ChunkUInt newCarry = 0 ;
           addReportingOverflow (lastRemainderValue, carry, newCarry) ;
           carry = newCarry ;
-//          lastRemainderValue += carry ;
-//          carry = lastRemainderValue < carry ;
           remainder.mSharedArray.setChunkAtIndex (lastRemainderValue, remainderLastIndex COMMA_HERE) ;
           underflow = carry == 0 ;
         }

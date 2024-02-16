@@ -14,11 +14,11 @@
 BigUnsigned BigUnsigned::randomNumber (void) {
   const size_t MAX_BYTE_SIZE = 160 ;
   const size_t randomByteCount = 1 + galgas_random () % MAX_BYTE_SIZE ;
-  uint8_t array [MAX_BYTE_SIZE] ;
+  std::vector <uint8_t> u8BigEndianArray ; ;
   for (size_t i = 0 ; i < randomByteCount ; i ++) {
-    array [i] = uint8_t (galgas_random ()) ;
+    u8BigEndianArray.push_back (uint8_t (galgas_random ())) ;
   }
-  return BigUnsigned (randomByteCount, array) ;
+  return BigUnsigned (u8BigEndianArray) ;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -109,11 +109,10 @@ BigUnsigned & BigUnsigned::operator = (const BigUnsigned & inSource) {
 //--------------------------------------------------------------------------------------------------
 
 #ifdef USE_8_BITS_CHUNKS
-  BigUnsigned::BigUnsigned (const size_t inU8Count,
-                            const uint8_t inSourceU8Array []) :
-  mSharedArray (inU8Count) {
-    for (size_t i = inU8Count ; i > 0 ; i--) {
-      mSharedArray.appendChunk (inSourceU8Array [i-1] COMMA_HERE) ;
+  BigUnsigned::BigUnsigned (const std::vector <uint8_t> & inBigEndianArray) :
+  mSharedArray (inBigEndianArray.size ()) {
+    for (auto it = inBigEndianArray.rbegin () ; it != inBigEndianArray.rend () ; it++) {
+      mSharedArray.appendChunk (*it COMMA_HERE) ;
     }
     mSharedArray.removeLeadingZeroChunks (HERE) ;
   }
@@ -122,11 +121,10 @@ BigUnsigned & BigUnsigned::operator = (const BigUnsigned & inSource) {
 //--------------------------------------------------------------------------------------------------
 
 #ifdef USE_8_BITS_CHUNKS
-  BigUnsigned::BigUnsigned (const size_t inU64Count,
-                            const uint64_t inSourceU64Array []) :
-    mSharedArray (inU64Count * 8) {
-    for (size_t i = inU64Count ; i > 0 ; i--) {
-      uint64_t v = inSourceU64Array [i-1] ;
+  BigUnsigned::BigUnsigned (const std::vector <uint64_t> & inBigEndianArray) :
+    mSharedArray (inBigEndianArray.size () * 8) {
+    for (auto it = inBigEndianArray.rbegin () ; it != inBigEndianArray.rend () ; it++) {
+      uint64_t v = *it ;
       for (size_t j = 0 ; j < 8 ; j++) {
         mSharedArray.appendChunk (uint8_t (v) COMMA_HERE) ;
         v >>= 8 ;
@@ -156,13 +154,12 @@ BigUnsigned & BigUnsigned::operator = (const BigUnsigned & inSource) {
 //--------------------------------------------------------------------------------------------------
 
 #ifdef USE_32_BITS_CHUNKS
-  BigUnsigned::BigUnsigned (const size_t inU8Count,
-                            const uint8_t inSourceU8Array []) :
-  mSharedArray ((inU8Count + 3) / 4) {
+  BigUnsigned::BigUnsigned (const std::vector <uint8_t> & inBigEndianArray) :
+  mSharedArray ((inBigEndianArray.size () + 3) / 4) {
     uint32_t accumulator = 0 ;
     size_t phase = 0 ;
-    for (size_t i = inU8Count ; i > 0 ; i--) {
-      const uint64_t v = inSourceU8Array [i-1] ;
+    for (auto it = inBigEndianArray.rbegin () ; it != inBigEndianArray.rend () ; it++) {
+      const uint64_t v = *it ;
       accumulator |= (v << phase) ;
       phase += 8 ;
       if (phase == 32) {
@@ -181,11 +178,10 @@ BigUnsigned & BigUnsigned::operator = (const BigUnsigned & inSource) {
 //--------------------------------------------------------------------------------------------------
 
 #ifdef USE_32_BITS_CHUNKS
-  BigUnsigned::BigUnsigned (const size_t inU64Count,
-                            const uint64_t inSourceU64Array []) :
-    mSharedArray (inU64Count * 2) {
-    for (size_t i = inU64Count ; i > 0 ; i--) {
-      uint64_t v = inSourceU64Array [i-1] ;
+  BigUnsigned::BigUnsigned (const std::vector <uint64_t> & inBigEndianArray) :
+    mSharedArray (inBigEndianArray.size () * 2) {
+    for (auto it = inBigEndianArray.rbegin () ; it != inBigEndianArray.rend () ; it++) {
+      uint64_t v = *it ;
       for (size_t j = 0 ; j < 2 ; j++) {
         mSharedArray.appendChunk (uint32_t (v) COMMA_HERE) ;
         v >>= 32 ;
@@ -217,13 +213,12 @@ BigUnsigned & BigUnsigned::operator = (const BigUnsigned & inSource) {
 //--------------------------------------------------------------------------------------------------
 
 #ifdef USE_16_BITS_CHUNKS
-  BigUnsigned::BigUnsigned (const size_t inU8Count,
-                            const uint8_t inSourceU8Array []) :
-  mSharedArray ((inU8Count + 1) / 2) {
+  BigUnsigned::BigUnsigned (const std::vector <uint8_t> & inBigEndianArray) :
+  mSharedArray ((inBigEndianArray.size () + 1) / 2) {
     uint16_t accumulator = 0 ;
     size_t phase = 0 ;
-    for (size_t i = inU8Count ; i > 0 ; i--) {
-      const uint64_t v = inSourceU8Array [i-1] ;
+    for (auto it = inBigEndianArray.rbegin () ; it != inBigEndianArray.rend () ; it++) {
+      const uint64_t v = *it ;
       accumulator |= (v << phase) ;
       phase += 8 ;
       if (phase == 16) {
@@ -242,11 +237,10 @@ BigUnsigned & BigUnsigned::operator = (const BigUnsigned & inSource) {
 //--------------------------------------------------------------------------------------------------
 
 #ifdef USE_16_BITS_CHUNKS
-  BigUnsigned::BigUnsigned (const size_t inU64Count,
-                            const uint64_t inSourceU64Array []) :
-    mSharedArray (inU64Count * 4) {
-    for (size_t i = inU64Count ; i > 0 ; i--) {
-      uint64_t v = inSourceU64Array [i-1] ;
+  BigUnsigned::BigUnsigned (const std::vector <uint64_t> & inBigEndianArray) :
+    mSharedArray (inBigEndianArray.size () * 4) {
+    for (auto it = inBigEndianArray.rbegin () ; it != inBigEndianArray.rend () ; it++) {
+      uint64_t v = *it ;
       for (size_t j = 0 ; j < 4 ; j++) {
         mSharedArray.appendChunk (uint16_t (v) COMMA_HERE) ;
         v >>= 16 ;
@@ -275,13 +269,12 @@ BigUnsigned & BigUnsigned::operator = (const BigUnsigned & inSource) {
 //--------------------------------------------------------------------------------------------------
 
 #ifdef USE_64_BITS_CHUNKS
-  BigUnsigned::BigUnsigned (const size_t inU8Count,
-                            const uint8_t inSourceU8Array []) :
-  mSharedArray ((inU8Count + 7) / 8) {
+  BigUnsigned::BigUnsigned (const std::vector <uint8_t> & inBigEndianArray) :
+  mSharedArray ((inBigEndianArray.size () + 7) / 8) {
     uint64_t accumulator = 0 ;
     size_t phase = 0 ;
-    for (size_t i = inU8Count ; i > 0 ; i--) {
-      const uint64_t v = inSourceU8Array [i-1] ;
+    for (auto it = inBigEndianArray.rbegin () ; it != inBigEndianArray.rend () ; it++) {
+      const uint64_t v = *it ;
       accumulator |= (v << phase) ;
       phase += 8 ;
       if (phase == 64) {
@@ -300,11 +293,10 @@ BigUnsigned & BigUnsigned::operator = (const BigUnsigned & inSource) {
 //--------------------------------------------------------------------------------------------------
 
 #ifdef USE_64_BITS_CHUNKS
-  BigUnsigned::BigUnsigned (const size_t inU64Count,
-                            const uint64_t inSourceU64Array []) :
-    mSharedArray (inU64Count) {
-    for (size_t i = inU64Count ; i > 0 ; i--) {
-      mSharedArray.appendChunk (inSourceU64Array [i-1] COMMA_HERE) ;
+  BigUnsigned::BigUnsigned (const std::vector <uint64_t> & inBigEndianArray) :
+    mSharedArray (inBigEndianArray.size ()) {
+    for (auto it = inBigEndianArray.rbegin () ; it != inBigEndianArray.rend () ; it++) {
+      mSharedArray.appendChunk (*it COMMA_HERE) ;
     }
     mSharedArray.removeLeadingZeroChunks (HERE) ;
   }

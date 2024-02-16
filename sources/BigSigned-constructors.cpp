@@ -57,10 +57,9 @@ mUnsigned (BigUnsigned ((inValue >= 0) ? uint64_t (inValue) : uint64_t (-inValue
 //--------------------------------------------------------------------------------------------------
 
 BigSigned::BigSigned (const bool inPositive,
-                      const size_t inByteCount,
-                      const uint8_t inSourceByteArray []) :
+                      const std::vector <uint8_t> & inBigEndianArray) :
 mIsPositive (inPositive),
-mUnsigned (inByteCount, inSourceByteArray) {
+mUnsigned (inBigEndianArray) {
   if (mUnsigned.isZero ()) {
     mIsPositive = true ;
   }

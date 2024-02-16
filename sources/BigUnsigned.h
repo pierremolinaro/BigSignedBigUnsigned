@@ -19,11 +19,9 @@ class BigUnsigned final {
 
   public: explicit BigUnsigned (const uint64_t inValue) ;
 
-  public: explicit BigUnsigned (const size_t inU8Count,
-                                const uint8_t inSourceU8Array []) ;
+  public: explicit BigUnsigned (const std::vector <uint8_t> & inBigEndianArray) ;
 
-  public: explicit BigUnsigned (const size_t inU64Count,
-                                const uint64_t inSourceU64Array []) ;
+  public: explicit BigUnsigned (const std::vector <uint64_t> & inBigEndianArray) ;
 
   public: explicit BigUnsigned (const std::string & inString, const uint8_t inSeparator) ;
 

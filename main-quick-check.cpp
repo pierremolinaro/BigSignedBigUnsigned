@@ -52,15 +52,15 @@ static void testBigUnsignedU8ArrayConstructor (void) {
   set_galgas_random_seed (0) ;
   std::cout << "BigUnsigned: test U8 array constructor, U8 access... " << std::flush ;
   const size_t LENGTH = 41 ;
-  uint8_t u8Array [LENGTH] ;
   std::string refString ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     refString = "" ;
+    std::vector <uint8_t> u8BigEndianArray ;
     const size_t u8Count = 1 + galgas_random () % LENGTH ;
     for (size_t j = 0 ; j < u8Count ; j++) {
       const uint8_t u8Value = uint8_t (galgas_random ()) ;
-      u8Array [j] = u8Value ;
+      u8BigEndianArray.push_back (u8Value) ;
       char s [4] ;
       snprintf (s, 3, "%02" PRIX8, u8Value) ;
       refString.append (s) ;
@@ -70,7 +70,7 @@ static void testBigUnsignedU8ArrayConstructor (void) {
       refString.erase (refString.begin ()) ; // Remove first character
     }
   //---
-    const BigUnsigned big (u8Count, u8Array) ;
+    const BigUnsigned big (u8BigEndianArray) ;
     const std::string s = big.xString () ;
   //--- Check U8 access
     std::string u8AccessString ;
@@ -103,17 +103,17 @@ static void testBigUnsignedU64ArrayConstructor (void) {
   set_galgas_random_seed (0) ;
   std::cout << "BigUnsigned: test U64 array constructor... " << std::flush ;
   const size_t LENGTH = 20 ;
-  uint64_t u64Array [LENGTH] ;
   std::string refString ;
   const clock_t start = ::clock () ;
   for (int i = 0 ; i < CHECK_COUNT ; i++) {
     refString = "" ;
+    std::vector <uint64_t> u64BigEndianArray ;
     const size_t u64Count = 1 + galgas_random () % LENGTH ;
     for (size_t j = 0 ; j < u64Count ; j++) {
       uint64_t u64Value = galgas_random () ;
       u64Value <<= 32 ;
       u64Value |= galgas_random () ;
-      u64Array [j] = u64Value ;
+      u64BigEndianArray.push_back (u64Value) ;
       char s [32] ;
       if (j == 0) {
         snprintf (s, 31, "%" PRIX64, u64Value) ;
@@ -122,7 +122,7 @@ static void testBigUnsignedU64ArrayConstructor (void) {
       }
       refString.append (s) ;
     }
-    const BigUnsigned big (u64Count, u64Array) ;
+    const BigUnsigned big (u64BigEndianArray) ;
     const std::string s = big.xString () ;
     if (s != refString) {
       std::cout << "error (i=" << i << ")\n" ;

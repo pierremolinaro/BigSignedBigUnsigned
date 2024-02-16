@@ -30,13 +30,9 @@ BigUnsigned BigUnsigned::multiply (const BigUnsigned inLeft, const BigUnsigned i
         baseMultiplication (leftValue, rightOperand.mSharedArray.chunkAtIndex (j COMMA_HERE), high, low) ;
       //--- Add carry
         addReportingOverflow (low, carry, high) ;
-//        low += carry ;
-//        high += low < carry ;
       //--- Store result
         ChunkUInt v = result.mSharedArray.chunkAtIndex (i + j - 1 COMMA_HERE) ;
         addReportingOverflow (v, low, high) ;
-//        v += low ;
-//        high += v < low ;
         result.mSharedArray.setChunkAtIndex (v, i + j - 1 COMMA_HERE) ;
         carry = high ;
       }

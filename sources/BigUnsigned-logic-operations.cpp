@@ -108,7 +108,6 @@ BigUnsigned BigUnsigned::subtractedOneAndComplemented (const size_t inChunkCount
 //--------------------------------------------------------------------------------------------------
 
 BigUnsigned BigUnsigned::utilityForNegativeOrNegative (const BigUnsigned & inOperand) const {
-// Operation performed by this code:  return ((*this - 1) & (inOperand - 1)) + 1 ;
   const size_t minChunkCount = std::min (chunkCount(), inOperand.chunkCount()) ;
   BigUnsigned result ;
   result.mSharedArray.insulateWithChunkCapacity (minChunkCount + 1) ;
@@ -138,7 +137,6 @@ BigUnsigned BigUnsigned::utilityForNegativeOrNegative (const BigUnsigned & inOpe
 //--------------------------------------------------------------------------------------------------
 
 BigUnsigned BigUnsigned::utilityForNegativeAndNegative (const BigUnsigned & inOperand) const {
-// Operation performed by this code: ((*this - 1) | (inOperand - 1)) + 1 ;
   const size_t maxChunkCount = std::max (chunkCount(), inOperand.chunkCount()) ;
   BigUnsigned result ;
   result.mSharedArray.insulateWithChunkCapacity (maxChunkCount + 1) ;
@@ -157,8 +155,6 @@ BigUnsigned BigUnsigned::utilityForNegativeAndNegative (const BigUnsigned & inOp
     ChunkUInt newCarry = 0 ;
     addReportingOverflow (r, carry, newCarry) ;
     carry = newCarry ;
-//    const ChunkUInt r = (leftValue | rightValue) + carry ;
-//    carry = r < carry ;
     result.mSharedArray.appendChunk (r COMMA_HERE) ;
   }
   for (size_t i = minChunkCount + 1 ; i <= chunkCount() ; i++) {
@@ -189,7 +185,6 @@ BigUnsigned BigUnsigned::utilityForNegativeAndNegative (const BigUnsigned & inOp
 //--------------------------------------------------------------------------------------------------
 
 BigUnsigned BigUnsigned::utilityForPositiveAndNegative (const BigUnsigned & inNegative) const {
-// Operation performed by this code: *this & inNegative.subtractedOneAndComplemented (chunkCount()) ;
   const size_t maxChunkCount = std::max (chunkCount(), inNegative.chunkCount()) ;
   BigUnsigned result ;
   result.mSharedArray.insulateWithChunkCapacity (maxChunkCount) ;
@@ -218,7 +213,6 @@ BigUnsigned BigUnsigned::utilityForPositiveAndNegative (const BigUnsigned & inNe
 //--------------------------------------------------------------------------------------------------
 
 BigUnsigned BigUnsigned::utilityForPositiveOrNegative (const BigUnsigned & inNegative) const {
-// Operation performed by this code: (complemented (inNegative.chunkCount ()) & (inNegative - 1)) + 1 ;
   const size_t maxChunkCount = std::max (chunkCount(), inNegative.chunkCount()) ;
   BigUnsigned result ;
   result.mSharedArray.insulateWithChunkCapacity (maxChunkCount + 1) ;
@@ -251,7 +245,6 @@ BigUnsigned BigUnsigned::utilityForPositiveOrNegative (const BigUnsigned & inNeg
 //--------------------------------------------------------------------------------------------------
 
 BigUnsigned BigUnsigned::utilityForNegativeXorNegative (const BigUnsigned & inOperand) const {
-// Operation performed by this code: (*this - 1) ^ (inOperand - 1) ;
   const size_t maxChunkCount = std::max (chunkCount(), inOperand.chunkCount()) ;
   BigUnsigned result ;
   result.mSharedArray.insulateWithChunkCapacity (maxChunkCount) ;
@@ -288,8 +281,6 @@ BigUnsigned BigUnsigned::utilityForNegativeXorNegative (const BigUnsigned & inOp
 //--------------------------------------------------------------------------------------------------
 
 BigUnsigned BigUnsigned::utilityForPositiveXorNegative (const BigUnsigned & inNegative) const {
-// Operation performed by this code: const BigUnsigned r = *this ^ inNegative.subtractedOneAndComplemented (chunkCount ()) ;
-//                     then returns: r.complemented (r.chunkCount ()) + 1 ;
   const size_t maxChunkCount = std::max (chunkCount(), inNegative.chunkCount()) ;
   BigUnsigned result ;
   result.mSharedArray.insulateWithChunkCapacity (maxChunkCount + 1) ;
