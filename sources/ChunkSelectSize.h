@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------------------------------------------
 
-#if (!defined (USE_8_BITS_CHUNKS)) && (!defined (USE_16_BITS_CHUNKS)) && (!defined (USE_32_BITS_CHUNKS))
+#if (!defined (USE_8_BITS_CHUNKS)) && (!defined (USE_16_BITS_CHUNKS)) && (!defined (USE_32_BITS_CHUNKS)) && (!defined (USE_64_BITS_CHUNKS))
   #define USE_64_BITS_CHUNKS
 #endif
 
